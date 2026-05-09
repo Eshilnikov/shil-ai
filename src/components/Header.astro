@@ -8,9 +8,20 @@ import { SITE } from "@consts";
   <Container>
     <div class="flex flex-wrap justify-between gap-y-2">
       <Link href="/" underline={false} aria-label={SITE.TITLE}>
-        <div class="text-2xl">
-          🔬
-        </div>
+        <svg
+          class="block h-7 w-7 text-ink dark:text-paper"
+          viewBox="0 0 240 240"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <g fill="currentColor">
+            <rect x="36" y="60" width="28" height="120"></rect>
+            <rect x="106" y="60" width="28" height="120"></rect>
+            <rect x="176" y="96" width="28" height="84"></rect>
+            <rect x="36" y="152" width="168" height="28"></rect>
+          </g>
+          <rect x="176" y="60" width="28" height="28" fill="#ff4d14"></rect>
+        </svg>
       </Link>
       <nav class="flex items-center gap-1 text-sm">
         <Link href="/blog">блог</Link>
@@ -21,7 +32,7 @@ import { SITE } from "@consts";
         <button
           id="magnifying-glass"
           aria-label="Поиск"
-          class="flex items-center rounded-sm border border-black/15 bg-neutral-100 px-2 py-1 text-xs transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:bg-neutral-900 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+          class="flex items-center rounded-sm border border-ink/15 bg-paper-soft px-2 py-1 text-xs transition-colors duration-300 ease-in-out hover:bg-ink/5 hover:text-ink focus-visible:bg-ink/5 focus-visible:text-ink dark:border-paper/20 dark:bg-ink-soft dark:hover:bg-paper/5 dark:hover:text-paper dark:focus-visible:bg-paper/5 dark:focus-visible:text-paper"
         >
           <svg
             height="16"

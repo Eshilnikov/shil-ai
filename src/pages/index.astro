@@ -52,50 +52,53 @@ const projects: CollectionEntry<"projects">[] = (
           </article>
         </section>
 
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
-              Latest posts
-            </h2>
-            <Link href="/blog"> See all posts </Link>
-          </div>
-          <ul class="not-prose flex flex-col gap-4">
-            {
-              blog.map((post) => (
-                <li>
-                  <ArrowCard entry={post} />
-                </li>
-              ))
-            }
-          </ul>
-        </section>
+        {
+          blog.length > 0 && (
+            <section class="animate space-y-6">
+              <div class="flex flex-wrap items-center justify-between gap-y-2">
+                <h2 class="font-semibold text-black dark:text-white">
+                  Последние заметки
+                </h2>
+                <Link href="/blog"> Все заметки </Link>
+              </div>
+              <ul class="not-prose flex flex-col gap-4">
+                {blog.map((post) => (
+                  <li>
+                    <ArrowCard entry={post} />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
 
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
-              Recent projects
-            </h2>
-            <Link href="/projects"> See all projects </Link>
-          </div>
-          <ul class="not-prose flex flex-col gap-4">
-            {
-              projects.map((project) => (
-                <li>
-                  <ArrowCard entry={project} />
-                </li>
-              ))
-            }
-          </ul>
-        </section>
+        {
+          projects.length > 0 && (
+            <section class="animate space-y-6">
+              <div class="flex flex-wrap items-center justify-between gap-y-2">
+                <h2 class="font-semibold text-black dark:text-white">
+                  Проекты
+                </h2>
+                <Link href="/projects"> Все проекты </Link>
+              </div>
+              <ul class="not-prose flex flex-col gap-4">
+                {projects.map((project) => (
+                  <li>
+                    <ArrowCard entry={project} />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
 
         <section class="animate space-y-4">
           <h2 class="font-semibold text-black dark:text-white">
-            Let's Connect
+            Связаться
           </h2>
           <article>
             <p>
-              If you want to get in touch with me about something or just to say
-              hi, reach out on social media or send me an email.
+              Напишите в соцсетях или на почту — отвечу.
             </p>
           </article>
           <ul class="not-prose flex flex-wrap gap-2">

@@ -30,7 +30,7 @@ export const PROJECTS: Metadata = {
 export const SOCIALS: Socials = [
   {
     NAME: "Telegram",
-    HREF: "https://t.me/shilnikov_ai",
+    HREF: "https://t.me/shilnikov",
   },
   {
     NAME: "LinkedIn",

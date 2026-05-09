@@ -1,18 +1,18 @@
 import type { Metadata, Site, Socials } from "@types";
 
 export const SITE: Site = {
-  TITLE: "Eugene Shilnikov",
+  TITLE: "Евгений Шильников",
   DESCRIPTION:
-    "Group CPO at Fortis Group & Life Pay. Building personal AI agents. Public notes, code, case studies.",
+    "Финтех и AI-продукты для малого бизнеса в ОАЭ и России. Разбираю на своих кейсах, как AI меняет разработку продуктов и работу команд.",
   EMAIL: "eshilnikov@gmail.com",
   NUM_POSTS_ON_HOMEPAGE: 5,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
 
 export const HOME: Metadata = {
-  TITLE: "Eugene Shilnikov",
+  TITLE: "Финтех и AI на практике",
   DESCRIPTION:
-    "Group CPO в Fortis Group и Life Pay. Каждый день строю команду AI-агентов на работе и дома. Здесь — заметки, код и кейсы из реальной практики.",
+    "Евгений Шильников — продакт-лидер. Строю финтех для малого бизнеса в ОАЭ и России. Разбираю на своих кейсах, как AI меняет разработку продуктов и работу команд.",
 };
 
 export const BLOG: Metadata = {

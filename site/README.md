@@ -1,27 +1,11 @@
-# site/
+# Introducing [Astro Micro 🔬](https://astro-micro.vercel.app/)
 
-Astro source code for shil.ai.
+Astro Micro is an accessible theme for Astro. It's a fork of [Mark Horn's](https://github.com/markhorn-dev) popular theme [Astro Nano](https://astro-nano-demo.vercel.app/). Like Nano, Micro comes with zero frameworks installed.
 
-## Local dev
+Micro adds features like [Pagefind](https://pagefind.app) for search, [Giscus](https://giscus.app) for comments, and more. For a full list of changes, see this [blog post](https://astro-micro.vercel.app/blog/00-micro-changelog).
 
-```bash
-cd site
-npm install
-npm run dev
-```
+Micro still comes with everything great about Nano — full type safety, a sitemap, an RSS feed, and Markdown + MDX support. Styled with TailwindCSS and preconfigured with system, light, and dark themes.
 
-Open http://localhost:4321
+---
 
-## Deploy
-
-Auto-deploys to Vercel on every push to `main`. Production: [shil.ai](https://shil.ai).
-
-## Stack
-
-- Astro 5+
-- Markdown content from `../posts/`
-- TypeScript
-- Tailwind CSS
-- Deploy: Vercel
-
-(Filled in once Astro is initialized.)
+![astro-micro](https://github.com/user-attachments/assets/fc9b55b9-53e5-4933-9d23-936e1c61e6c2)

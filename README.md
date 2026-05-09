@@ -27,4 +27,4 @@ MIT — feel free to fork, adapt, learn from. Attribution appreciated, not requi
 
 ## Contact
 
-[shil.ai](https://shil.ai) · [Telegram channel](https://t.me/) (coming soon) · [LinkedIn](https://linkedin.com/in/shilnikov)
+[shil.ai](https://shil.ai) · Telegram channel (coming soon) · LinkedIn (coming soon)

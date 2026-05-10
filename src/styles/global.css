@@ -5,10 +5,21 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: Geist Sans, ui-sans-serif, system-ui, sans-serif,
+  --font-sans: 'Manrope Variable', ui-sans-serif, system-ui, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-mono: Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco,
-    Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+  --color-paper: #f4f1ea;
+  --color-paper-soft: #ece8df;
+  --color-rule: #d9d4c5;
+  --color-rule-soft: #e7e2d6;
+  --color-ink: #0b0b0c;
+  --color-ink-soft: #1a1916;
+  --color-muted: #6f6a5e;
+  --color-muted-dark: #8a8579;
+  --color-signal: #ff4d14;
+  --color-signal-soft: #ff8a80;
 }
 
 /*
@@ -48,14 +59,17 @@
   body {
     @apply font-sans antialiased;
     @apply flex flex-col;
-    @apply bg-neutral-100 dark:bg-neutral-900;
-    @apply text-black/75 dark:text-white/75;
+    @apply bg-paper dark:bg-ink;
+    @apply text-ink/85 dark:text-paper/80;
   }
 
   header {
-    @apply fixed left-0 right-0 top-0 z-50 py-6;
-    @apply bg-neutral-100/75 dark:bg-neutral-900/75;
-    @apply saturate-200 backdrop-blur-xs;
+    @apply sticky top-0 z-50;
+    @apply bg-paper dark:bg-ink;
+    padding-top: calc(1.5rem + env(safe-area-inset-top, 0px));
+    padding-bottom: 1.5rem;
+    transform: translateZ(0);
+    will-change: transform;
   }
 
   main {
@@ -69,29 +83,24 @@
   article {
     @apply prose prose-neutral max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
     @apply prose-headings:font-semibold;
-    @apply prose-headings:text-black dark:prose-headings:text-white;
+    @apply prose-headings:text-ink dark:prose-headings:text-paper;
   }
 }
 
 @layer utilities {
   article a {
     @apply font-sans text-current underline underline-offset-[3px];
-    @apply decoration-black/30 dark:decoration-white/30;
+    @apply decoration-signal/60 dark:decoration-signal/70;
     @apply transition-colors duration-300 ease-in-out;
   }
   article a:hover {
-    @apply text-black dark:text-white;
-    @apply decoration-black/50 dark:decoration-white/50;
+    @apply text-signal dark:text-signal;
+    @apply decoration-signal;
   }
 }
 
 .animate {
-  @apply -translate-y-3 opacity-0;
-  @apply transition-all duration-300 ease-out;
-}
-
-.animate.show {
-  @apply translate-y-0 opacity-100;
+  @apply opacity-100;
 }
 
 html #back-to-top {

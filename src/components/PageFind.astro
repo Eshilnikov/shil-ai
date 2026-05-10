@@ -19,12 +19,27 @@ import Search from "astro-pagefind/components/Search";
           showImages: false,
           excerptLength: 15,
           resetStyles: false,
+          translations: {
+            placeholder: "Поиск по сайту…",
+            clear_search: "Очистить",
+            load_more: "Показать ещё",
+            search_label: "Поиск по сайту",
+            filters_label: "Фильтры",
+            zero_results: "Ничего не нашлось по запросу [SEARCH_TERM]",
+            many_results: "Найдено [COUNT] по запросу [SEARCH_TERM]",
+            one_result: "Найден 1 результат по запросу [SEARCH_TERM]",
+            alt_search:
+              "Ничего по [SEARCH_TERM]. Вот что нашлось по [DIFFERENT_TERM]",
+            search_suggestion:
+              "Ничего по [SEARCH_TERM]. Попробуй один из этих запросов:",
+            searching: "Ищу [SEARCH_TERM]…",
+          },
         }}
       />
       <div class="mr-2 pb-1 pt-4 text-right text-xs dark:prose-invert">
-        Press <span class="prose text-xs dark:prose-invert"
+        Нажми <span class="prose text-xs dark:prose-invert"
           ><kbd class="">Esc</kbd></span
-        > or click anywhere to close
+        > или кликни вне окна, чтобы закрыть
       </div>
     </div>
   </div>

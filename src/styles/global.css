@@ -68,6 +68,8 @@
     @apply bg-paper dark:bg-ink;
     padding-top: calc(1.5rem + env(safe-area-inset-top, 0px));
     padding-bottom: 1.5rem;
+    transform: translateZ(0);
+    will-change: transform;
   }
 
   main {

@@ -16,7 +16,7 @@ export const HOME: Metadata = {
 };
 
 export const BLOG: Metadata = {
-  TITLE: "Заметки",
+  TITLE: "Блог",
   DESCRIPTION:
     "Полевые заметки о работе с продуктами и AI: что внедрил, что выбросил, что сработало, а что нет.",
 };

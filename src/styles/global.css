@@ -65,8 +65,7 @@
 
   header {
     @apply fixed left-0 right-0 top-0 z-50 py-6;
-    @apply bg-paper/80 dark:bg-ink/80;
-    @apply saturate-200 backdrop-blur-xs;
+    @apply bg-paper dark:bg-ink;
   }
 
   main {

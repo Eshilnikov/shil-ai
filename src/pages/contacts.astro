@@ -1,0 +1,37 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+import { SITE, CONTACTS, SOCIALS } from "@consts";
+---
+
+<Layout title={CONTACTS.TITLE} description={CONTACTS.DESCRIPTION}>
+  <Container>
+    <aside data-pagefind-ignore>
+      <div class="space-y-10">
+        <h1 class="animate font-semibold text-ink dark:text-paper">
+          {CONTACTS.TITLE}
+        </h1>
+        <article class="animate space-y-4">
+          <p>Напишите в соцсетях — отвечу.</p>
+        </article>
+        <ul class="not-prose animate flex flex-wrap gap-2">
+          {
+            SOCIALS.map((SOCIAL, idx) => (
+              <li class="flex gap-x-2 text-nowrap">
+                <Link
+                  href={SOCIAL.HREF}
+                  external
+                  aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
+                >
+                  {SOCIAL.NAME}
+                </Link>
+                {idx < SOCIALS.length - 1 && "/"}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </aside>
+  </Container>
+</Layout>

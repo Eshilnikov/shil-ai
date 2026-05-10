@@ -27,6 +27,12 @@ export const PROJECTS: Metadata = {
     "Открытый код, конфиги и кейсы из моей AI-native продуктовой практики.",
 };
 
+export const CONTACTS: Metadata = {
+  TITLE: "Контакты",
+  DESCRIPTION:
+    "Связаться с Евгением Шильниковым: Telegram, LinkedIn, GitHub.",
+};
+
 export const SOCIALS: Socials = [
   {
     NAME: "Telegram",

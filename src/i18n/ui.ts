@@ -15,8 +15,14 @@ export const ui = {
     "back.blog": "К блогу",
     "back.projects": "К проектам",
     "blog.title": "Блог",
-    "blog.empty": "Пока пусто. Скоро здесь появятся первые материалы.",
+    "blog.empty.part1":
+      "Пока ничего не опубликовано — заметки в работе. Первые материалы появятся здесь скоро. А ежедневные мысли публикую в ",
+    "blog.empty.link.label": "Telegram-канале",
+    "blog.empty.link.href": "https://t.me/shilnikov_ai",
+    "blog.empty.part2": ".",
     "projects.title": "Проекты",
+    "projects.empty":
+      "Пока ничего не опубликовано — открытый код и кейсы появятся здесь.",
     "home.h1":
       "Привет, меня зовут Женя Шильников. Я разбираю на своих кейсах, как AI меняет работу и жизнь.",
     "home.intro1.part1":
@@ -57,8 +63,14 @@ export const ui = {
     "back.blog": "Back to blog",
     "back.projects": "Back to projects",
     "blog.title": "Blog",
-    "blog.empty": "Nothing here yet. First posts coming soon.",
+    "blog.empty.part1":
+      "Nothing published yet — notes are in the works. First posts coming soon. I share daily thoughts on the ",
+    "blog.empty.link.label": "Telegram channel",
+    "blog.empty.link.href": "https://t.me/shilnikov_ai",
+    "blog.empty.part2": ".",
     "projects.title": "Projects",
+    "projects.empty":
+      "Nothing published yet — open-source code and case studies coming here.",
     "home.h1":
       "Hi, I'm Eugene Shilnikov. I unpack — on my own cases — how AI is changing work and life.",
     "home.intro1.part1":

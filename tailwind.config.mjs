@@ -9,8 +9,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
-        serif: ["Lora", ...defaultTheme.fontFamily.serif],
+        sans: ["'Manrope Variable'", ...defaultTheme.fontFamily.sans],
+        mono: ["'JetBrains Mono Variable'", ...defaultTheme.fontFamily.mono],
       },
     },
   },

@@ -1,49 +1,44 @@
-import type { Metadata, Site, Socials } from "@types";
+import type { Site, Metadata, Socials } from "@types";
 
 export const SITE: Site = {
-  TITLE: "Евгений Шильников",
-  DESCRIPTION:
-    "Финтех и AI-продукты для малого бизнеса в ОАЭ и России. Разбираю на своих кейсах, как AI меняет работу и повседневную жизнь.",
-  EMAIL: "eshilnikov@gmail.com",
-  NUM_POSTS_ON_HOMEPAGE: 5,
+  NAME: "Astro Nano",
+  EMAIL: "markhorn.dev@gmail.com",
+  NUM_POSTS_ON_HOMEPAGE: 3,
+  NUM_WORKS_ON_HOMEPAGE: 2,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
 
 export const HOME: Metadata = {
-  TITLE: "Финтех и AI на практике",
-  DESCRIPTION:
-    "Евгений Шильников — продакт-лидер. Строю финтех для малого бизнеса в ОАЭ и России. Разбираю на своих кейсах, как AI меняет работу — продуктовую, командную, повседневную.",
+  TITLE: "Home",
+  DESCRIPTION: "Astro Nano is a minimal and lightweight blog and portfolio.",
 };
 
 export const BLOG: Metadata = {
-  TITLE: "Блог",
-  DESCRIPTION:
-    "Полевые заметки о работе с продуктами и AI: что внедрил, что выбросил, что сработало, а что нет.",
+  TITLE: "Blog",
+  DESCRIPTION: "A collection of articles on topics I am passionate about.",
+};
+
+export const WORK: Metadata = {
+  TITLE: "Work",
+  DESCRIPTION: "Where I have worked and what I have done.",
 };
 
 export const PROJECTS: Metadata = {
-  TITLE: "Проекты",
-  DESCRIPTION:
-    "Открытый код, конфиги и кейсы из моей AI-native продуктовой практики.",
-};
-
-export const CONTACTS: Metadata = {
-  TITLE: "Контакты",
-  DESCRIPTION:
-    "Связаться с Евгением Шильниковым: Telegram, LinkedIn, GitHub.",
+  TITLE: "Projects",
+  DESCRIPTION: "A collection of my projects, with links to repositories and demos.",
 };
 
 export const SOCIALS: Socials = [
-  {
-    NAME: "Telegram",
-    HREF: "https://t.me/shilnikov",
+  { 
+    NAME: "twitter-x",
+    HREF: "https://twitter.com/markhorn_dev",
   },
-  {
-    NAME: "LinkedIn",
-    HREF: "https://www.linkedin.com/in/eugene-shilnikov/",
+  { 
+    NAME: "github",
+    HREF: "https://github.com/markhorn-dev"
   },
-  {
-    NAME: "GitHub",
-    HREF: "https://github.com/Eshilnikov",
-  },
+  { 
+    NAME: "linkedin",
+    HREF: "https://www.linkedin.com/in/markhorn-dev",
+  }
 ];

@@ -1,19 +1,9 @@
 import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
-import pagefind from "astro-pagefind";
-import tailwindcss from "@tailwindcss/vite";
+import sitemap from "@astrojs/sitemap";
+import tailwind from "@astrojs/tailwind";
 
-// https://astro.build/config
 export default defineConfig({
-  site: "https://www.shilnikov.ai",
-  integrations: [sitemap(), mdx(), pagefind()],
-  vite: {
-    plugins: [tailwindcss()],
-  },
-  markdown: {
-    shikiConfig: {
-      theme: "css-variables",
-    },
-  },
+  site: "https://astro-nano-demo.vercel.app",
+  integrations: [mdx(), sitemap(), tailwind()],
 });

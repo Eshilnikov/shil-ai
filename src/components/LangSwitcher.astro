@@ -1,0 +1,27 @@
+---
+import { getLangFromUrl, localizedPath } from "@i18n/utils";
+import { ui } from "@i18n/ui";
+
+const currentLang = getLangFromUrl(Astro.url);
+const langs = Object.keys(ui) as Array<keyof typeof ui>;
+---
+
+<nav class="flex items-center gap-1 text-sm" aria-label="Language">
+  {
+    langs.map((lang, i) => (
+      <>
+        {i > 0 && <span class="opacity-50">{`/`}</span>}
+        {lang === currentLang ? (
+          <span class="font-semibold">{lang.toUpperCase()}</span>
+        ) : (
+          <a
+            href={localizedPath(Astro.url.pathname, lang)}
+            class="opacity-75 hover:opacity-100 transition-opacity"
+          >
+            {lang.toUpperCase()}
+          </a>
+        )}
+      </>
+    ))
+  }
+</nav>

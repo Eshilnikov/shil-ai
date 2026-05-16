@@ -1,34 +1,31 @@
 ---
 import Container from "@components/Container.astro";
-import Link from "@components/Link.astro";
+import LangSwitcher from "@components/LangSwitcher.astro";
 import { SITE } from "@consts";
+import { getLangFromUrl, useTranslations, localizedPath } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header>
   <Container>
-    <div class="flex flex-wrap gap-y-2 justify-between">
-      <Link href="/" underline={false}>
-        <div class="font-semibold">
-          {SITE.NAME}
-        </div>
-      </Link>
-      <nav class="flex gap-1">
-        <Link href="/blog">
-          blog
-        </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/work">
-          work
-        </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/projects">
-          projects
-        </Link>
-      </nav>
+    <div class="flex flex-wrap items-center gap-y-2 justify-between">
+      <a href={localizedPath("/", lang)} class="flex items-center gap-2 text-current hover:text-signal transition-colors">
+        <img src="/logo.svg" alt={SITE.NAME} class="h-7 w-auto" />
+        <span class="font-semibold">{SITE.NAME}</span>
+      </a>
+      <div class="flex items-center gap-3">
+        <nav class="flex gap-1">
+          <a href={localizedPath("/blog", lang)} class="underline underline-offset-2 decoration-signal/40 hover:decoration-signal hover:text-signal transition-colors">{t("nav.blog")}</a>
+          <span class="opacity-50">{`/`}</span>
+          <a href={localizedPath("/work", lang)} class="underline underline-offset-2 decoration-signal/40 hover:decoration-signal hover:text-signal transition-colors">{t("nav.work")}</a>
+          <span class="opacity-50">{`/`}</span>
+          <a href={localizedPath("/projects", lang)} class="underline underline-offset-2 decoration-signal/40 hover:decoration-signal hover:text-signal transition-colors">{t("nav.projects")}</a>
+        </nav>
+        <span class="opacity-50">{`·`}</span>
+        <LangSwitcher />
+      </div>
     </div>
   </Container>
 </header>

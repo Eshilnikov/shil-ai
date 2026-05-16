@@ -12,6 +12,12 @@ export default {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
         serif: ["Lora", ...defaultTheme.fontFamily.serif],
       },
+      colors: {
+        signal: {
+          DEFAULT: "#ff4d14",
+          soft: "#ff8a80",
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

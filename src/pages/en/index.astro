@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import Container from "@components/Container.astro";
 import PageLayout from "@layouts/PageLayout.astro";
 import ArrowCard from "@components/ArrowCard.astro";
@@ -14,29 +15,38 @@ const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
+
+const projects: CollectionEntry<"projects">[] = (
+  await getCollection("projects")
+)
+  .filter((project) => !project.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
     <h4 class="animate font-semibold text-black dark:text-white">
-      {t("home.greeting")} <span class="text-xl">👋🏻</span>
+      {t("home.h1")}
     </h4>
     <div class="space-y-16">
       <section>
         <article class="space-y-4">
-          <p class="animate">{t("home.intro1")}</p>
-          <p class="animate">{t("home.intro2")}</p>
           <p class="animate">
-            {t("home.intro.cta")}{" "}
-            <Link href="https://t.me/shil_ai" aria-label="Telegram" external>Telegram</Link>{" "}
-            {lang === "ru" ? "или" : "or"}{" "}
-            <Link
-              href="https://www.linkedin.com/in/eugene-shilnikov/"
-              aria-label="LinkedIn"
-              external
-            >
-              LinkedIn
-            </Link>.
+            {t("home.intro1.part1")}<Link
+              href={t("home.intro1.link1.href")}
+              external>{t("home.intro1.link1.label")}</Link>{t("home.intro1.part2")}<Link
+              href={t("home.intro1.link2.href")}
+              external>{t("home.intro1.link2.label")}</Link>{t("home.intro1.part3")}<Link
+              href={t("home.intro1.link3.href")}
+              external>{t("home.intro1.link3.label")}</Link>{t("home.intro1.part4")}<Link
+              href={t("home.intro1.link4.href")}
+              external>{t("home.intro1.link4.label")}</Link>{t("home.intro1.part5")}
+          </p>
+          <p class="animate">
+            {t("home.intro2.part1")}<Link
+              href={t("home.intro2.link.href")}
+              external>{t("home.intro2.link.label")}</Link>{t("home.intro2.part2")}
           </p>
         </article>
       </section>
@@ -56,6 +66,28 @@ const blog = (await getCollection("blog"))
               {blog.map((post) => (
                 <li>
                   <ArrowCard entry={post} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      {
+        projects.length > 0 && (
+          <section class="animate space-y-6">
+            <div class="flex flex-wrap gap-y-2 items-center justify-between">
+              <h5 class="font-semibold text-black dark:text-white">
+                {t("home.projects")}
+              </h5>
+              <Link href={localizedPath("/projects", lang)}>
+                {t("home.see_all_projects")}
+              </Link>
+            </div>
+            <ul class="flex flex-col gap-4">
+              {projects.map((project) => (
+                <li>
+                  <ArrowCard entry={project} />
                 </li>
               ))}
             </ul>

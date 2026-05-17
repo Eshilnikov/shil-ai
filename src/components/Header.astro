@@ -11,16 +11,28 @@ const t = useTranslations(lang);
 <header>
   <Container>
     <div class="flex flex-wrap items-center gap-y-2 justify-between">
-      <Link href={localizedPath("/", lang)} underline={false}>
-        <img
-          src="/logo.svg"
-          alt={SITE.NAME}
+      <a
+        href={localizedPath("/", lang)}
+        class="inline-flex items-center text-black dark:text-white"
+        aria-label={SITE.NAME}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 240 240"
           width="28"
           height="28"
           class="h-7 w-7"
           transition:persist
-        />
-      </Link>
+        >
+          <g fill="currentColor">
+            <rect x="36" y="60" width="28" height="120"></rect>
+            <rect x="106" y="60" width="28" height="120"></rect>
+            <rect x="176" y="96" width="28" height="84"></rect>
+            <rect x="36" y="152" width="168" height="28"></rect>
+          </g>
+          <rect x="176" y="60" width="28" height="28" fill="#ff4d14"></rect>
+        </svg>
+      </a>
       <nav class="flex gap-1">
         <Link href={localizedPath("/blog", lang)}>{t("nav.blog")}</Link>
         <span>{`/`}</span>

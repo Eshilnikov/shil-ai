@@ -2,6 +2,7 @@
 import Container from "@components/Container.astro";
 import { SITE } from "@consts";
 import BackToTop from "@components/BackToTop.astro";
+import LangSwitcher from "@components/LangSwitcher.astro";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
@@ -11,6 +12,9 @@ const t = useTranslations(lang);
 <footer class="animate">
   <Container>
     <div class="relative">
+      <div class="absolute left-0 -top-20">
+        <LangSwitcher />
+      </div>
       <div class="absolute right-0 -top-20">
         <BackToTop />
       </div>

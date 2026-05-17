@@ -1,27 +1,26 @@
 ---
 import { getLangFromUrl, localizedPath } from "@i18n/utils";
-import { ui } from "@i18n/ui";
+import { ui, defaultLang } from "@i18n/ui";
 
 const currentLang = getLangFromUrl(Astro.url);
 const langs = Object.keys(ui) as Array<keyof typeof ui>;
+const otherLang = (langs.find((l) => l !== currentLang) ?? defaultLang) as keyof typeof ui;
+const otherHref = localizedPath(Astro.url.pathname, otherLang);
 ---
 
-<nav class="flex items-center gap-1 text-sm" aria-label="Language">
-  {
-    langs.map((lang, i) => (
-      <>
-        {i > 0 && <span class="opacity-50">{`/`}</span>}
-        {lang === currentLang ? (
-          <span class="font-semibold">{lang.toUpperCase()}</span>
-        ) : (
-          <a
-            href={localizedPath(Astro.url.pathname, lang)}
-            class="opacity-75 hover:opacity-100 transition-opacity"
-          >
-            {lang.toUpperCase()}
-          </a>
-        )}
-      </>
-    ))
-  }
-</nav>
+<a
+  href={otherHref}
+  aria-label={`Switch to ${otherLang.toUpperCase()}`}
+  class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out text-current no-underline"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current"
+  >
+    <circle cx="12" cy="12" r="9"></circle>
+    <path d="M3 12h18"></path>
+    <path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"></path>
+  </svg>
+  <div class="text-sm">{otherLang.toUpperCase()}</div>
+</a>

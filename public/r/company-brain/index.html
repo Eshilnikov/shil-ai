@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Company Brain — ландшафт категории (для инвесторов)</title>
+<style>
+  :root{
+    --bg:#FAFAFC; --panel:#FFFFFF; --ink:#141720; --muted:#5B6474; --faint:#8A93A3;
+    --line:#E4E7EE; --line-strong:#D2D7E1;
+    --accent:#155E63; --accent-soft:#DCEEF0; --accent-ink:#0C4448;
+    --pos:#15803D; --pos-soft:#E4F3E9;
+    --amber:#B45309; --amber-soft:#F6ECD9;
+    --graph:#2B8A8F;
+    --maxw:74ch;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0D1016; --panel:#141924; --ink:#EAEDF3;
+      --muted:#9AA4B4; --faint:#707A8B; --line:#232B39; --line-strong:#2E3848;
+      --accent:#4FD1C5; --accent-soft:#12312F; --accent-ink:#8CE7DD;
+      --pos:#4ADE80; --pos-soft:#123020; --amber:#F0B968; --amber-soft:#332612;
+      --graph:#3FB3AE;
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#FAFAFC; --panel:#FFFFFF; --ink:#141720; --muted:#5B6474; --faint:#8A93A3;
+    --line:#E4E7EE; --line-strong:#D2D7E1; --accent:#155E63; --accent-soft:#DCEEF0;
+    --accent-ink:#0C4448; --pos:#15803D; --pos-soft:#E4F3E9; --amber:#B45309;
+    --amber-soft:#F6ECD9; --graph:#2B8A8F;
+  }
+  :root[data-theme="dark"]{
+    --bg:#0D1016; --panel:#141924; --ink:#EAEDF3; --muted:#9AA4B4; --faint:#707A8B;
+    --line:#232B39; --line-strong:#2E3848; --accent:#4FD1C5; --accent-soft:#12312F;
+    --accent-ink:#8CE7DD; --pos:#4ADE80; --pos-soft:#123020; --amber:#F0B968;
+    --amber-soft:#332612; --graph:#3FB3AE;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:17px; line-height:1.62; letter-spacing:-0.003em;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px}
+  .prose{max-width:var(--maxw)}
+  h1,h2,h3{text-wrap:balance; line-height:1.15; letter-spacing:-0.02em; font-weight:680}
+  a{color:var(--accent); text-underline-offset:3px}
+  .eyebrow{font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* Hero */
+  header.hero{position:relative; overflow:hidden; border-bottom:1px solid var(--line)}
+  #graph{position:absolute; inset:0; width:100%; height:100%; opacity:.5; z-index:0}
+  .hero-in{position:relative; z-index:1; padding:72px 0 48px}
+  .hero h1{font-size:clamp(30px,5.2vw,52px); margin:14px 0 0}
+  .hero .thesis{max-width:60ch; font-size:clamp(17px,2.2vw,21px); color:var(--muted); margin:18px 0 0; line-height:1.5}
+  .hero .meta{margin-top:26px; font-size:13px; color:var(--faint); display:flex; gap:18px; flex-wrap:wrap}
+
+  section{padding:52px 0; border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(22px,3.2vw,30px); margin:0 0 6px}
+  .lead{color:var(--muted); max-width:var(--maxw); margin:0 0 26px}
+  p{margin:0 0 16px}
+  .prose p, .prose li{max-width:var(--maxw)}
+  ul{padding-left:1.1em; margin:0 0 16px}
+  li{margin:.3em 0}
+  strong{font-weight:680}
+
+  /* Stat tiles */
+  .stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:16px; margin:6px 0 8px}
+  .stat{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px}
+  .stat .k{font-size:clamp(26px,4vw,34px); font-weight:720; letter-spacing:-.02em; color:var(--ink)}
+  .stat .k small{font-size:.5em; font-weight:640; color:var(--muted); letter-spacing:0}
+  .stat .l{font-size:13px; color:var(--muted); margin-top:6px; line-height:1.4}
+
+  /* Cards / groups */
+  .group{background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:22px 22px 6px; margin:0 0 18px}
+  .group > .ghead{display:flex; align-items:baseline; gap:10px; margin:0 0 4px}
+  .group .tag{font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent-ink); background:var(--accent-soft); padding:3px 9px; border-radius:999px}
+  .group h3{font-size:18px; margin:0}
+  .players{list-style:none; padding:0; margin:12px 0 14px}
+  .players li{padding:12px 0; border-top:1px solid var(--line); display:grid; grid-template-columns:150px 1fr; gap:16px}
+  .players li:first-child{border-top:0}
+  .players .name{font-weight:680; color:var(--ink)}
+  .players .name .st{display:block; font-size:12px; font-weight:600; color:var(--faint); margin-top:3px}
+  .players .desc{color:var(--muted); font-size:15px; line-height:1.5}
+  .players .desc b{color:var(--ink); font-weight:660}
+
+  /* Table */
+  .tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:14px; background:var(--panel)}
+  table{border-collapse:collapse; width:100%; min-width:560px; font-size:15px}
+  th,td{text-align:left; padding:13px 16px; vertical-align:top; border-top:1px solid var(--line)}
+  thead th{border-top:0; font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:var(--faint); font-weight:700; background:transparent}
+  tbody tr td:first-child{font-weight:640; color:var(--ink)}
+  td .who{color:var(--faint); font-size:13px}
+
+  /* Funding rows */
+  .fund{display:grid; grid-template-columns:1fr; gap:0}
+  .frow{display:grid; grid-template-columns:130px 1fr auto; gap:16px; align-items:center; padding:14px 0; border-top:1px solid var(--line)}
+  .frow:first-child{border-top:0}
+  .frow .co{font-weight:680}
+  .frow .note{color:var(--muted); font-size:14px}
+  .frow .fig{font-variant-numeric:tabular-nums; font-weight:680; text-align:right; white-space:nowrap}
+  .chip{display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:999px; letter-spacing:.03em; vertical-align:middle}
+  .chip.pos{color:var(--pos); background:var(--pos-soft)}
+  .chip.amb{color:var(--amber); background:var(--amber-soft)}
+
+  /* Whitespace list */
+  .ws{list-style:none; padding:0; margin:0; counter-reset:w}
+  .ws li{counter-increment:w; position:relative; padding:18px 0 18px 52px; border-top:1px solid var(--line)}
+  .ws li:first-child{border-top:0}
+  .ws li::before{content:counter(w); position:absolute; left:0; top:16px; width:34px; height:34px;
+    display:grid; place-items:center; border-radius:10px; background:var(--accent-soft); color:var(--accent-ink);
+    font-weight:720; font-size:15px; font-variant-numeric:tabular-nums}
+  .ws b{color:var(--ink)}
+  .ws .d{color:var(--muted); font-size:15px; margin-top:3px}
+
+  /* Pullquote */
+  blockquote{margin:0; padding:26px 28px; background:var(--accent-soft); border-radius:16px;
+    color:var(--accent-ink); font-size:clamp(18px,2.6vw,22px); line-height:1.45; font-weight:560; letter-spacing:-.01em}
+  blockquote .src{display:block; font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px; color:var(--accent)}
+
+  .caveat{font-size:14px; color:var(--muted); background:var(--panel); border:1px dashed var(--line-strong); border-radius:12px; padding:16px 18px}
+  .sources{font-size:14px; color:var(--muted); columns:2; column-gap:32px}
+  .sources p{break-inside:avoid; margin:0 0 10px}
+  @media(max-width:640px){ .sources{columns:1} .players li{grid-template-columns:1fr; gap:4px} .frow{grid-template-columns:1fr auto} .frow .note{grid-column:1/-1} }
+  footer{padding:40px 0 64px; color:var(--faint); font-size:13px}
+  @media (prefers-reduced-motion:reduce){ #graph{opacity:.32} }
+</style>
+</head><body>
+
+<header class="hero">
+  <canvas id="graph" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <p class="eyebrow">Ландшафт категории · для инвесторов</p>
+    <h1>Company Brain: следующий слой — не поиск, а онтология компании</h1>
+    <p class="thesis">Единый AI-слой над всеми знаниями компании превратился из метафоры в отдельную волну стартапов. Enterprise search уже выиграл Glean. Открытая ниша — живой граф того, как бизнес реально работает, который делает армию агентов надёжной.</p>
+    <div class="meta">
+      <span>Фокус: mid-market / enterprise</span>
+      <span>·</span>
+      <span>Скан через Exa.ai · 31.07.2026</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <p class="eyebrow">Почему момент</p>
+    <h2>Рынок реальный и быстрый</h2>
+    <p class="lead">Боль оцифрована, деньги идут, лидер уже на миллиардах. Категория подтверждена — вопрос не «есть ли рынок», а «где в нём ниша для нового игрока».</p>
+    <div class="stats">
+      <div class="stat"><div class="k">$7.2<small>млрд</small></div><div class="l">оценка Glean, лидера категории (Series F, $150M, июнь 2025)</div></div>
+      <div class="stat"><div class="k">$300<small>M ARR</small></div><div class="l">выручка Glean — ×3 за 15 месяцев (май 2026)</div></div>
+      <div class="stat"><div class="k">~20<small>% CAGR</small></div><div class="l">рынок EKM-for-AI: ~$4.2 → $10.45 млрд к 2030</div></div>
+      <div class="stat"><div class="k">1.8<small>ч/день</small></div><div class="l">знание-работник тратит на поиск — ~$43M/год для компании на 5000 человек</div></div>
+    </div>
+    <div class="prose">
+      <p>Сдвиг важнее цифр: рынок переходит <strong>от «поиска» к «агентам»</strong>. Агенты бесполезны без grounding в корпоративном контексте — company brain становится инфраструктурой под них, а не UX поиска. При этом в 2026 продукт продаётся как способ <em>срезать</em> AI-бюджет через консолидацию зоопарка инструментов, а не добавить расход.</p>
+      <p>Пруфы ценности (кейсы Glean): Duolingo — 500+ ч/мес и ~$1.1M/год; Wealthsimple (финтех) — $1M+/год; Confluent — 15 000+ ч/мес. Forrester: ROI 141% за 3 года, до 110 часов на пользователя в год.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Ландшафт</p>
+    <h2>Категория расслоилась на четыре формы</h2>
+    <p class="lead">«Company brain» — уже самоназвание волны стартапов. Позиционирование по слову занято; дифференциация идёт по форме продукта.</p>
+
+    <div class="group">
+      <div class="ghead"><span class="tag">A</span><h3>Горизонтальный enterprise search + ассистент</h3></div>
+      <ul class="players">
+        <li><span class="name">Glean<span class="st">$7.2B · $300M ARR</span></span><span class="desc">«Google для предприятия». 100+ коннекторов, ~$15–25/user/мес. <b>Категорийный лидер</b>, задаёт планку.</span></li>
+        <li><span class="name">Dust<span class="st">Series B $40M · $6M ARR</span></span><span class="desc">«Multiplayer agent workspace»: строишь агентов под функцию. Sequoia+Abstract. <b>ARR ×6 за год</b> — агенты, которые «делают».</span></li>
+        <li><span class="name">Onyx (ex-Danswer)<span class="st">open-source</span></span><span class="desc">Self-host поиск/ассистент, популярен у тех-команд.</span></li>
+        <li><span class="name">Nexus · Writer · Coveo · Guru</span><span class="desc">Соседи: свежий seed (Nexus $4.3M), генеративные платформы, ветераны search.</span></li>
+      </ul>
+    </div>
+
+    <div class="group">
+      <div class="ghead"><span class="tag">B</span><h3>Deep-analysis / reasoning — под аналитика</h3></div>
+      <ul class="players">
+        <li><span class="name">Hebbia<span class="st">$3–15K/место/год</span></span><span class="desc">Рассуждение по тысячам документов до решения. Фокус <b>инвестбанки, финансы, легал</b>. Премиальный ARPU.</span></li>
+      </ul>
+    </div>
+
+    <div class="group">
+      <div class="ghead"><span class="tag">C</span><h3>Вертикальные решения</h3></div>
+      <ul class="players">
+        <li><span class="name">Harvey</span><span class="desc">Легал-вертикаль: юрфирмы и in-house.</span></li>
+        <li><span class="name">Hebbia</span><span class="desc">Финансовый due diligence. Вертикаль выигрывает глубиной домена и regulated-требованиями там, где Glean «слишком общий».</span></li>
+      </ul>
+    </div>
+
+    <div class="group">
+      <div class="ghead"><span class="tag">D</span><h3>Context layer / knowledge graph / онтология <span style="font-weight:600;color:var(--faint);font-size:13px">— самый релевантный слой</span></h3></div>
+      <ul class="players">
+        <li><span class="name">Hyper<span class="st">YC Spring 2026</span></span><span class="desc">«Self-driving company brain»: <b>самоподдерживающийся knowledge graph</b> из всех потоков, память на уровне SOTA, питает AI-«сотрудников».</span></li>
+        <li><span class="name">Nerra</span><span class="desc">«Живой слой знаний о том, как компания реально работает» — процессы, хендоффы, решения; авто-построение, не из забытых документов.</span></li>
+        <li><span class="name">Jedify · Graphwise · Atlan</span><span class="desc">Context graph под grounded-агентов; «hallucination-free» на графах; Atlan продвигает термин <b>«enterprise context layer»</b> (Gartner-нота).</span></li>
+        <li><span class="name">devresolve · ekory · exbrain</span><span class="desc">Новые pure-play «company brain»: open-source инфра / agent-native workspace / память.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Матрица</p>
+    <h2>Проблема → решение</h2>
+    <p class="lead">Что каждый заявляет как боль и чем закрывает — карта для позиционирования против существующих игроков.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Заявленная боль</th><th>Как решают</th><th>Кто акцентирует</th></tr></thead>
+        <tbody>
+          <tr><td>Силосы знаний, 20+ систем</td><td>Коннекторы + единый индекс</td><td class="who">Glean, Onyx</td></tr>
+          <tr><td>Потеря экспертизы / tribal knowledge</td><td>Авто-захват процессов и решений в граф</td><td class="who">Hyper, Nerra</td></tr>
+          <tr><td>Онбординг, «спрашивают одно и то же»</td><td>Ассистент с памятью, self-maintaining brain</td><td class="who">Hyper, Glean</td></tr>
+          <tr><td>Агенты галлюцинируют / без контекста</td><td>Grounding через knowledge graph / context layer</td><td class="who">Jedify, Graphwise, Atlan</td></tr>
+          <tr><td>Перелопатить тысячи документов</td><td>Deep multi-doc reasoning</td><td class="who">Hebbia</td></tr>
+          <tr><td>Права доступа, комплаенс, безопасность</td><td>Permission-aware индекс, ACL-mirroring</td><td class="who">Glean, вертикальные</td></tr>
+          <tr><td>Регулируемые домены (право, финансы)</td><td>Вертикальная глубина + аудит</td><td class="who">Harvey, Hebbia</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Сигналы роста · 2025–2026</p>
+    <h2>Деньги, выручка, консолидация</h2>
+    <p class="lead">Funding и ARR — из tier-1 медиа (Reuters, TechCrunch, VentureBeat), надёжны. Оценки рынка — порядок величины.</p>
+    <div class="fund">
+      <div class="frow"><span class="co">Glean</span><span class="note">Series F, Wellington · ARR ×3 за 15 мес <span class="chip pos">лидер</span></span><span class="fig">$7.2B · $300M ARR</span></div>
+      <div class="frow"><span class="co">Dust</span><span class="note">Series B, Sequoia+Abstract · ARR ×6 за год <span class="chip pos">разгон</span></span><span class="fig">$40M · $6M ARR</span></div>
+      <div class="frow"><span class="co">Sana Labs</span><span class="note">приобретена, сент. 2025 <span class="chip amb">консолидация</span></span><span class="fig">$138M собрано</span></div>
+      <div class="frow"><span class="co">Hebbia</span><span class="note">финансы/легал, экспансия на Уолл-стрит</span><span class="fig">$3–15K/место</span></div>
+      <div class="frow"><span class="co">Hyper</span><span class="note">YC Spring 2026 · knowledge graph + agent memory <span class="chip pos">новый</span></span><span class="fig">early</span></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Возможность</p>
+    <h2>Whitespace — где выигрывает новый игрок</h2>
+    <p class="lead">Не конкурировать с Glean в лоб на horizontal search. Реальные незакрытые пробелы, ранжированы по силе рва.</p>
+    <ol class="ws">
+      <li><b>Онтологический, самоподдерживающийся слой — не RAG-свалка.</b><div class="d">Большинство — векторный RAG поверх коннекторов. Дифференциация: живой граф, моделирующий, как компания реально работает. Hyper и Nerra идут туда — гипотеза валидна, но лидер поля ещё не занял. Прямо совпадает с онтологическим тезисом.</div></li>
+      <li><b>Mid-market.</b><div class="d">Между дорогим enterprise (Glean/Hebbia) и self-serve. Нужен быстрый rollout, предсказуемая цена, без 6-месячного внедрения.</div></li>
+      <li><b>Agent-grounding как инфраструктура (B2D).</b><div class="d">«Слой под всеми агентами» с единым API — продавать строителям агентов, не конечному сотруднику. Растёт с агентной волной.</div></li>
+      <li><b>Вертикальная глубина в регулируемом / cross-border.</b><div class="d">Финтех, платежи, трансграничка — где комплаенс, юрисдикции и аудит критичны, а горизонтальные игроки поверхностны. Ров через домен и данные.</div></li>
+      <li><b>Data-in-motion, не data-at-rest.</b><div class="d">Захват решений и хендоффов в моменте, а не индексация того, что люди забыли обновить.</div></li>
+    </ol>
+  </section>
+
+  <section>
+    <p class="eyebrow">Нарратив под инвесторов</p>
+    <h2>Черновик тезиса</h2>
+    <blockquote>
+      <span class="src">One-liner для питча</span>
+      Enterprise search уже выиграл Glean ($7.2 млрд). Но следующий слой — не поиск, а <strong>онтология компании</strong>: живой граф того, как бизнес реально работает, который делает армию агентов надёжной. Категория подтверждена, рынок $10 млрд+ к 2030, а mid-market и регулируемые вертикали недо-обслужены. Мы строим company brain как онтологический grounding-слой для этого сегмента.
+    </blockquote>
+  </section>
+
+  <section style="border-bottom:0">
+    <p class="eyebrow">Источники и оговорки</p>
+    <h2>Основание</h2>
+    <div class="caveat" style="margin-bottom:22px">⚠️ Funding/ARR — из Reuters, TechCrunch, Crunchbase, VentureBeat (надёжно). Оценки размера рынка — из market-research SEO-источников, брать как порядок величины. Покупатель Sana Labs не подтверждён — проверить перед питчем.</div>
+    <div class="sources">
+      <p><strong>Glean</strong> — Reuters, TechCrunch, Crunchbase ($7.2B, Series F); TechCrunch 28.05.2026 ($300M ARR); Forrester TEI (ROI 141%).</p>
+      <p><strong>Кейсы</strong> — theapplied.co: Duolingo, Wealthsimple, Confluent.</p>
+      <p><strong>Dust</strong> — TheNextWeb (Series B $40M), VentureBeat ($6M ARR).</p>
+      <p><strong>Sana Labs</strong> — CBInsights ($137.93M, приобретена 09.2025).</p>
+      <p><strong>Hebbia / Harvey</strong> — Business Insider, Spellbook (finance/legal).</p>
+      <p><strong>Hyper</strong> — Y Combinator (Spring 2026), heyhyper.ai.</p>
+      <p><strong>Context layer</strong> — nerra.ai, jedify.com, graphwise.ai, atlan.com, devresolve.ai, ekory.ai, exbrain.ai.</p>
+      <p><strong>Рынок</strong> — LingoExp, Mordor Intelligence (оценки EKM-for-AI).</p>
+    </div>
+  </section>
+
+  <footer>Собрано через Exa.ai · 31 июля 2026 · рабочий материал для инвесторского нарратива, не финансовая гарантия.</footer>
+</main>
+
+<script>
+(function(){
+  var c=document.getElementById('graph'); if(!c) return;
+  var ctx=c.getContext('2d'); var W,H,DPR,nodes=[],edges=[];
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function col(){ return getComputedStyle(document.documentElement).getPropertyValue('--graph').trim()||'#2B8A8F'; }
+  function resize(){
+    DPR=Math.min(window.devicePixelRatio||1,2);
+    W=c.clientWidth; H=c.clientHeight;
+    c.width=W*DPR; c.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+  }
+  function build(){
+    nodes=[]; edges=[];
+    var n=Math.max(16,Math.round(W/46));
+    for(var i=0;i<n;i++){
+      nodes.push({x:Math.random()*W,y:Math.random()*H,
+        vx:(Math.random()-0.5)*0.18,vy:(Math.random()-0.5)*0.18,
+        r:1.4+Math.random()*2.2});
+    }
+    for(var a=0;a<n;a++) for(var b=a+1;b<n;b++){
+      if(Math.hypot(nodes[a].x-nodes[b].x,nodes[a].y-nodes[b].y)<150 && Math.random()<0.5) edges.push([a,b]);
+    }
+  }
+  function frame(){
+    var cc=col(); ctx.clearRect(0,0,W,H);
+    for(var e=0;e<edges.length;e++){
+      var p=nodes[edges[e][0]],q=nodes[edges[e][1]];
+      var d=Math.hypot(p.x-q.x,p.y-q.y); if(d>170) continue;
+      ctx.globalAlpha=Math.max(0,0.22*(1-d/170)); ctx.strokeStyle=cc; ctx.lineWidth=1;
+      ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.stroke();
+    }
+    for(var i=0;i<nodes.length;i++){
+      var nd=nodes[i];
+      if(!reduce){ nd.x+=nd.vx; nd.y+=nd.vy;
+        if(nd.x<0||nd.x>W) nd.vx*=-1; if(nd.y<0||nd.y>H) nd.vy*=-1; }
+      ctx.globalAlpha=0.55; ctx.fillStyle=cc;
+      ctx.beginPath(); ctx.arc(nd.x,nd.y,nd.r,0,6.2832); ctx.fill();
+    }
+    ctx.globalAlpha=1;
+    if(!reduce) raf=requestAnimationFrame(frame);
+  }
+  var raf;
+  function start(){ resize(); build(); cancelAnimationFrame(raf); frame(); }
+  window.addEventListener('resize',function(){ clearTimeout(window.__t); window.__t=setTimeout(start,180); });
+  start();
+})();
+</script>
+</body></html>

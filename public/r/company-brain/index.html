@@ -5,41 +5,45 @@
 <meta name="robots" content="noindex,nofollow">
 <title>Company Brain — ландшафт категории (для инвесторов)</title>
 <style>
+  @font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('/fonts/manrope-var.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215}
+  @font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('/fonts/manrope-cyr.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+  @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:100 800;font-display:swap;src:url('/fonts/jetbrains-var.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2074,U+20AC,U+2122,U+2212}
   :root{
-    --bg:#FAFAFC; --panel:#FFFFFF; --ink:#141720; --muted:#5B6474; --faint:#8A93A3;
-    --line:#E4E7EE; --line-strong:#D2D7E1;
-    --accent:#155E63; --accent-soft:#DCEEF0; --accent-ink:#0C4448;
-    --pos:#15803D; --pos-soft:#E4F3E9;
-    --amber:#B45309; --amber-soft:#F6ECD9;
-    --graph:#2B8A8F;
+    --bg:#F5F5F4; --panel:#FFFFFF; --ink:#1C1917; --muted:#57534E; --faint:#A8A29E;
+    --line:rgba(28,25,23,.12); --line-strong:rgba(28,25,23,.22);
+    --accent:#1C1917; --accent-soft:rgba(28,25,23,.055); --accent-ink:#1C1917;
+    --pos:#57534E; --pos-soft:rgba(28,25,23,.05);
+    --amber:#57534E; --amber-soft:rgba(28,25,23,.05);
+    --graph:#A8A29E;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
     --maxw:74ch;
   }
   @media (prefers-color-scheme:dark){
     :root{
-      --bg:#0D1016; --panel:#141924; --ink:#EAEDF3;
-      --muted:#9AA4B4; --faint:#707A8B; --line:#232B39; --line-strong:#2E3848;
-      --accent:#4FD1C5; --accent-soft:#12312F; --accent-ink:#8CE7DD;
-      --pos:#4ADE80; --pos-soft:#123020; --amber:#F0B968; --amber-soft:#332612;
-      --graph:#3FB3AE;
+      --bg:#1C1917; --panel:#292524; --ink:#FAFAF9;
+      --muted:rgba(250,250,249,.72); --faint:#8A827C; --line:rgba(255,255,255,.15); --line-strong:rgba(255,255,255,.24);
+      --accent:#FAFAF9; --accent-soft:rgba(255,255,255,.08); --accent-ink:#FAFAF9;
+      --pos:#D6D3D1; --pos-soft:rgba(255,255,255,.07); --amber:#D6D3D1; --amber-soft:rgba(255,255,255,.07);
+      --graph:#57534E;
     }
   }
   :root[data-theme="light"]{
-    --bg:#FAFAFC; --panel:#FFFFFF; --ink:#141720; --muted:#5B6474; --faint:#8A93A3;
-    --line:#E4E7EE; --line-strong:#D2D7E1; --accent:#155E63; --accent-soft:#DCEEF0;
-    --accent-ink:#0C4448; --pos:#15803D; --pos-soft:#E4F3E9; --amber:#B45309;
-    --amber-soft:#F6ECD9; --graph:#2B8A8F;
+    --bg:#F5F5F4; --panel:#FFFFFF; --ink:#1C1917; --muted:#57534E; --faint:#A8A29E;
+    --line:rgba(28,25,23,.12); --line-strong:rgba(28,25,23,.22); --accent:#1C1917; --accent-soft:rgba(28,25,23,.055);
+    --accent-ink:#1C1917; --pos:#57534E; --pos-soft:rgba(28,25,23,.05); --amber:#57534E;
+    --amber-soft:rgba(28,25,23,.05); --graph:#A8A29E;
   }
   :root[data-theme="dark"]{
-    --bg:#0D1016; --panel:#141924; --ink:#EAEDF3; --muted:#9AA4B4; --faint:#707A8B;
-    --line:#232B39; --line-strong:#2E3848; --accent:#4FD1C5; --accent-soft:#12312F;
-    --accent-ink:#8CE7DD; --pos:#4ADE80; --pos-soft:#123020; --amber:#F0B968;
-    --amber-soft:#332612; --graph:#3FB3AE;
+    --bg:#1C1917; --panel:#292524; --ink:#FAFAF9; --muted:rgba(250,250,249,.72); --faint:#8A827C;
+    --line:rgba(255,255,255,.15); --line-strong:rgba(255,255,255,.24); --accent:#FAFAF9; --accent-soft:rgba(255,255,255,.08);
+    --accent-ink:#FAFAF9; --pos:#D6D3D1; --pos-soft:rgba(255,255,255,.07); --amber:#D6D3D1;
+    --amber-soft:rgba(255,255,255,.07); --graph:#57534E;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{
     margin:0; background:var(--bg); color:var(--ink);
-    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-family:'Manrope',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-size:17px; line-height:1.62; letter-spacing:-0.003em;
     -webkit-font-smoothing:antialiased;
   }
@@ -128,6 +132,13 @@
   .sources p{break-inside:avoid; margin:0 0 10px}
   @media(max-width:640px){ .sources{columns:1} .players li{grid-template-columns:1fr; gap:4px} .frow{grid-template-columns:1fr auto} .frow .note{grid-column:1/-1} }
   footer{padding:40px 0 64px; color:var(--faint); font-size:13px}
+  /* --- shilnikov.ai design language: mono for data, monochrome accents, tighter radii --- */
+  .eyebrow{color:var(--faint)}
+  .stat .k, .stat .k small, .frow .fig, .tnum, .players .st, td .who, .who{font-family:var(--mono); letter-spacing:-.01em}
+  .chip{border:1px solid var(--line); font-family:var(--mono); font-weight:600}
+  .group,.stat,.tablewrap,blockquote,.caveat{border-radius:12px}
+  .ws li::before{font-family:var(--mono)}
+  h1,h2,h3{letter-spacing:-0.021em}
   @media (prefers-reduced-motion:reduce){ #graph{opacity:.32} }
 </style>
 </head><body>

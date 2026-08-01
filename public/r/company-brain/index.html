@@ -11,8 +11,8 @@
   :root{
     --bg:#F5F5F4; --panel:#FFFFFF; --ink:#1C1917; --muted:#57534E; --faint:#A8A29E;
     --line:rgba(28,25,23,.12); --line-strong:rgba(28,25,23,.22);
-    --accent:#1C1917; --accent-soft:rgba(28,25,23,.055); --accent-ink:#1C1917;
-    --pos:#57534E; --pos-soft:rgba(28,25,23,.05);
+    --accent:#FF4D14; --accent-soft:rgba(255,77,20,.10); --accent-ink:#B23A0F;
+    --pos:#B23A0F; --pos-soft:rgba(255,77,20,.10);
     --amber:#57534E; --amber-soft:rgba(28,25,23,.05);
     --graph:#A8A29E;
     --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
@@ -22,21 +22,21 @@
     :root{
       --bg:#1C1917; --panel:#292524; --ink:#FAFAF9;
       --muted:rgba(250,250,249,.72); --faint:#8A827C; --line:rgba(255,255,255,.15); --line-strong:rgba(255,255,255,.24);
-      --accent:#FAFAF9; --accent-soft:rgba(255,255,255,.08); --accent-ink:#FAFAF9;
-      --pos:#D6D3D1; --pos-soft:rgba(255,255,255,.07); --amber:#D6D3D1; --amber-soft:rgba(255,255,255,.07);
+      --accent:#FF6A3D; --accent-soft:rgba(255,106,61,.16); --accent-ink:#FF8A5C;
+      --pos:#FF8A5C; --pos-soft:rgba(255,106,61,.16); --amber:#D6D3D1; --amber-soft:rgba(255,255,255,.07);
       --graph:#57534E;
     }
   }
   :root[data-theme="light"]{
     --bg:#F5F5F4; --panel:#FFFFFF; --ink:#1C1917; --muted:#57534E; --faint:#A8A29E;
-    --line:rgba(28,25,23,.12); --line-strong:rgba(28,25,23,.22); --accent:#1C1917; --accent-soft:rgba(28,25,23,.055);
-    --accent-ink:#1C1917; --pos:#57534E; --pos-soft:rgba(28,25,23,.05); --amber:#57534E;
+    --line:rgba(28,25,23,.12); --line-strong:rgba(28,25,23,.22); --accent:#FF4D14; --accent-soft:rgba(255,77,20,.10);
+    --accent-ink:#B23A0F; --pos:#B23A0F; --pos-soft:rgba(255,77,20,.10); --amber:#57534E;
     --amber-soft:rgba(28,25,23,.05); --graph:#A8A29E;
   }
   :root[data-theme="dark"]{
     --bg:#1C1917; --panel:#292524; --ink:#FAFAF9; --muted:rgba(250,250,249,.72); --faint:#8A827C;
-    --line:rgba(255,255,255,.15); --line-strong:rgba(255,255,255,.24); --accent:#FAFAF9; --accent-soft:rgba(255,255,255,.08);
-    --accent-ink:#FAFAF9; --pos:#D6D3D1; --pos-soft:rgba(255,255,255,.07); --amber:#D6D3D1;
+    --line:rgba(255,255,255,.15); --line-strong:rgba(255,255,255,.24); --accent:#FF6A3D; --accent-soft:rgba(255,106,61,.16);
+    --accent-ink:#FF8A5C; --pos:#FF8A5C; --pos-soft:rgba(255,106,61,.16); --amber:#D6D3D1;
     --amber-soft:rgba(255,255,255,.07); --graph:#57534E;
   }
   *{box-sizing:border-box}
@@ -132,8 +132,8 @@
   .sources p{break-inside:avoid; margin:0 0 10px}
   @media(max-width:640px){ .sources{columns:1} .players li{grid-template-columns:1fr; gap:4px} .frow{grid-template-columns:1fr auto} .frow .note{grid-column:1/-1} }
   footer{padding:40px 0 64px; color:var(--faint); font-size:13px}
-  /* --- shilnikov.ai design language: mono for data, monochrome accents, tighter radii --- */
-  .eyebrow{color:var(--faint)}
+  /* --- shilnikov.ai design language: mono for data, brand-orange accent, tighter radii --- */
+  .eyebrow{color:var(--accent)}
   .stat .k, .stat .k small, .frow .fig, .tnum, .players .st, td .who, .who{font-family:var(--mono); letter-spacing:-.01em}
   .chip{border:1px solid var(--line); font-family:var(--mono); font-weight:600}
   .group,.stat,.tablewrap,blockquote,.caveat{border-radius:12px}

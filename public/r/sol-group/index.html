@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Company Brain для SOL-GROUP — как я понял задачу</title>
+<style>
+  @font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('/fonts/manrope-var.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215}
+  @font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('/fonts/manrope-cyr.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+  @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:100 800;font-display:swap;src:url('/fonts/jetbrains-var.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2074,U+20AC,U+2122,U+2212}
+  :root{
+    --bg:#F5F5F4; --panel:#FFFFFF; --ink:#1C1917; --muted:#57534E; --faint:#A8A29E;
+    --line:rgba(28,25,23,.12); --line-strong:rgba(28,25,23,.22);
+    --accent:#FF4D14; --accent-soft:rgba(255,77,20,.10); --accent-ink:#B23A0F;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#1C1917; --panel:#292524; --ink:#FAFAF9; --muted:rgba(250,250,249,.72);
+      --faint:#8A827C; --line:rgba(255,255,255,.15); --line-strong:rgba(255,255,255,.24);
+      --accent:#FF6A3D; --accent-soft:rgba(255,106,61,.16); --accent-ink:#FF8A5C;
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#F5F5F4; --panel:#FFFFFF; --ink:#1C1917; --muted:#57534E; --faint:#A8A29E;
+    --line:rgba(28,25,23,.12); --line-strong:rgba(28,25,23,.22); --accent:#FF4D14;
+    --accent-soft:rgba(255,77,20,.10); --accent-ink:#B23A0F;
+  }
+  :root[data-theme="dark"]{
+    --bg:#1C1917; --panel:#292524; --ink:#FAFAF9; --muted:rgba(250,250,249,.72); --faint:#8A827C;
+    --line:rgba(255,255,255,.15); --line-strong:rgba(255,255,255,.24); --accent:#FF6A3D;
+    --accent-soft:rgba(255,106,61,.16); --accent-ink:#FF8A5C;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased; font-feature-settings:"ss01","cv01";
+  }
+  .wrap{max-width:920px; margin:0 auto; padding:clamp(20px,5vw,56px) clamp(16px,4vw,32px)}
+  .slide{
+    background:var(--panel); border:1px solid var(--line); border-radius:18px;
+    padding:clamp(24px,4.5vw,44px); margin:0 0 clamp(16px,3vw,26px);
+    position:relative; overflow:hidden;
+  }
+  .num{
+    font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:.08em;
+    color:var(--accent-ink); text-transform:uppercase; display:inline-flex; align-items:center; gap:8px;
+    margin:0 0 14px;
+  }
+  .num::before{content:""; width:22px; height:1.5px; background:var(--accent); display:inline-block}
+  h1{font-size:clamp(30px,6vw,52px); line-height:1.05; font-weight:800; letter-spacing:-.02em; margin:0 0 16px}
+  h2{font-size:clamp(22px,4vw,32px); line-height:1.12; font-weight:800; letter-spacing:-.015em; margin:0 0 14px}
+  .lead{font-size:clamp(16px,2.4vw,19px); color:var(--muted); margin:0 0 8px}
+  p{margin:0 0 12px; color:var(--muted); font-size:clamp(15px,2vw,17px)}
+  strong{color:var(--ink); font-weight:700}
+  .kicker{font-family:var(--mono); font-size:13px; color:var(--faint); letter-spacing:.04em; margin:0 0 10px}
+  .meta{font-family:var(--mono); font-size:12.5px; color:var(--faint); margin-top:22px; display:flex; flex-wrap:wrap; gap:6px 18px}
+  ul{margin:6px 0 12px; padding:0; list-style:none}
+  li{position:relative; padding-left:22px; margin:0 0 10px; color:var(--muted); font-size:clamp(15px,2vw,17px)}
+  li::before{content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--accent)}
+  li strong{color:var(--ink)}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:8px 0 4px}
+  @media(max-width:620px){.grid2{grid-template-columns:1fr}}
+  .card{background:var(--accent-soft); border:1px solid var(--line); border-radius:12px; padding:16px 18px}
+  .card .t{font-weight:700; color:var(--ink); font-size:15px; margin:0 0 4px; display:flex; align-items:center; gap:8px}
+  .card p{font-size:14px; margin:0}
+  .stat{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:14px 0 6px}
+  @media(max-width:620px){.stat{grid-template-columns:1fr 1fr}}
+  .stat .b{border:1px solid var(--line); border-radius:12px; padding:14px 16px; background:var(--bg)}
+  .stat .n{font-size:clamp(22px,4vw,30px); font-weight:800; letter-spacing:-.02em; color:var(--ink); line-height:1}
+  .stat .l{font-size:12.5px; color:var(--muted); margin-top:6px; line-height:1.35}
+  .flow{display:flex; flex-wrap:wrap; align-items:stretch; gap:10px; margin:10px 0 4px}
+  .flow .step{flex:1 1 150px; border:1px solid var(--line); border-radius:12px; padding:14px 16px; background:var(--bg)}
+  .flow .step .s{font-family:var(--mono); font-size:11px; color:var(--accent-ink); font-weight:600; letter-spacing:.06em}
+  .flow .step .h{font-weight:700; color:var(--ink); font-size:15px; margin:4px 0 2px}
+  .flow .step p{font-size:13.5px; margin:0}
+  .note{border-left:2px solid var(--accent); padding:2px 0 2px 14px; margin:14px 0 2px; color:var(--faint); font-size:13.5px; font-style:italic}
+  .tag{display:inline-block; font-family:var(--mono); font-size:11px; color:var(--accent-ink); background:var(--accent-soft); border-radius:999px; padding:3px 10px; margin:0 6px 6px 0}
+  .price{border:1px solid var(--line-strong); border-radius:14px; padding:18px 20px; margin:8px 0; background:var(--bg)}
+  .price .h{font-weight:800; color:var(--ink); font-size:17px; margin:0 0 4px}
+  .price .v{font-family:var(--mono); font-size:15px; color:var(--accent-ink); font-weight:600}
+  .disc{font-size:12.5px; color:var(--faint); margin-top:10px}
+  .toggle{position:fixed; top:14px; right:14px; z-index:9; font-family:var(--mono); font-size:12px;
+    background:var(--panel); color:var(--muted); border:1px solid var(--line); border-radius:999px;
+    padding:7px 13px; cursor:pointer}
+  .foot{text-align:center; color:var(--faint); font-family:var(--mono); font-size:12px; padding:8px 0 30px}
+</style>
+</head>
+<body>
+<button class="toggle" id="tg">◐ тема</button>
+<div class="wrap">
+
+  <!-- 1. Титул -->
+  <section class="slide">
+    <p class="kicker">Пре-рид · конфиденциально</p>
+    <h1>Company&nbsp;Brain для&nbsp;SOL-GROUP</h1>
+    <p class="lead">Как я понял задачу и как предлагаю двигаться — единый «мозг» группы: одно место, где в реальном времени видно, что происходит по всем активам.</p>
+    <div class="meta">
+      <span>Евгений Шильников</span><span>—</span><span>для партнёра SOL-GROUP</span><span>—</span><span>материал к встрече</span>
+    </div>
+  </section>
+
+  <!-- 2. Проблема -->
+  <section class="slide">
+    <p class="num">01 · Проблема как я её понял</p>
+    <h2>Группа из десятков направлений управляется вручную</h2>
+    <ul>
+      <li>Чтобы понять, что происходит в проекте, нужно <strong>позвонить человеку</strong> и собрать картину по кусочкам</li>
+      <li>Оцифровано в лучшем случае <strong>только по расходам</strong> — «зайти и посмотреть, что вообще происходит» негде</li>
+      <li>Каждое утро — ручное <strong>оркестрирование</strong>: звонки, «здесь проблема, здесь проблема»</li>
+      <li>Решения <strong>наслаиваются и конфликтуют</strong>: вчера «идём в проект», сегодня «не идём», завтра «не так поняли»</li>
+    </ul>
+    <p class="note">Чем больше активов — тем дороже этот хаос. Внимание собственника — самый дефицитный ресурс, и он утекает в ручной сбор информации.</p>
+  </section>
+
+  <!-- 3. Что такое Company Brain -->
+  <section class="slide">
+    <p class="num">02 · Решение</p>
+    <h2>«Одна кнопка → вся картина»</h2>
+    <p>Company Brain — живая цифровая версия управляющей компании. Не папки, не звонки, не «спрошу у партнёра», а одна система, которая знает актуальное состояние каждого направления и отвечает на вопрос сразу.</p>
+    <div class="grid2">
+      <div class="card"><div class="t">Прозрачность</div><p>Открыл — видишь доходы, расходы, ключевые метрики, статусы и узкие места по каждому направлению.</p></div>
+      <div class="card"><div class="t">Решения на данных</div><p>Контекст между операционным управлением и руководителями направлений оцифрован и не теряется.</p></div>
+      <div class="card"><div class="t">Экономия времени</div><p>Меньше ручного сбора информации — больше решений. Освобождается самый дорогой ресурс управленцев.</p></div>
+      <div class="card"><div class="t">Платформа для роста</div><p>Как только данные в одном месте — поверх вырастают продукты: сверки, отчёты, обработка обращений.</p></div>
+    </div>
+  </section>
+
+  <!-- 4. Мой опыт -->
+  <section class="slide">
+    <p class="num">03 · Почему я</p>
+    <h2>Я это уже построил — не теория, а практика</h2>
+    <p>В Life Pay я собрал Company Brain и продукты вокруг него на живых деньгах и решениях группы.</p>
+    <div class="stat">
+      <div class="b"><div class="n">~60</div><div class="l">команда; ML-инженеры хантились из Яндекса</div></div>
+      <div class="b"><div class="n">3 мес</div><div class="l">от старта до работающего продукта</div></div>
+      <div class="b"><div class="n">3 чел</div><div class="l">поддерживают в текущем режиме</div></div>
+    </div>
+    <ul>
+      <li><strong>~18 000 обращений/мес</strong> от малого бизнеса обрабатываются автоматически — классификация и ответы ботами, включая голосового робота</li>
+      <li><strong>Автосверка банковских счетов</strong> вместо ручной работы финансистов: загрузка → сценарий → сводный отчёт прямо в Company Brain</li>
+    </ul>
+    <p class="disc">Цифры Life Pay — из моей практики; финальные формулировки согласую перед отправкой.</p>
+  </section>
+
+  <!-- 5. Подход -->
+  <section class="slide">
+    <p class="num">04 · Ключевая идея подхода</p>
+    <h2>Не строить «мозг» с нуля — начать с финансовой команды</h2>
+    <p>У вас уже есть финансисты, которые собирают данные со всех бизнесов и следят за показателями. <strong>Это и есть ваш живой company brain — только ручной.</strong> Первый шаг — оцифровать то, что команда уже делает руками.</p>
+    <div class="grid2">
+      <div class="card"><div class="t">→ Мгновенный ROI</div><p>Экономим время финкоманды с первого шага — не «когда-нибудь потом».</p></div>
+      <div class="card"><div class="t">→ Сразу модель данных</div><p>Из их работы рождается онтология группы — фундамент для всего остального.</p></div>
+    </div>
+    <p class="note">Не просто «считать каждую копейку», а видеть, где каждая копейка начинает окупаться.</p>
+  </section>
+
+  <!-- 6. Этап 1 -->
+  <section class="slide">
+    <p class="num">05 · Этап 1 · Аудит и образ результата</p>
+    <h2>От интервью — к работающему экрану прозрачности</h2>
+    <div class="flow">
+      <div class="step"><div class="s">НЕД. 1–2</div><div class="h">Аудит и интервью</div><p>Садимся с финкомандой и владельцами: что собирают, откуда, как часто, что вы спрашиваете еженедельно.</p></div>
+      <div class="step"><div class="s">НЕД. 2–3</div><div class="h">Онтология данных</div><p>Минимальная модель: направление, показатель, решение, узкое место, период. Согласуем 3–5 направлений.</p></div>
+      <div class="step"><div class="s">НЕД. 3–6</div><div class="h">Ключевой экран</div><p>«Одна кнопка → состояние направления» на живых цифрах 3–5 направлений — из ваших же таблиц.</p></div>
+    </div>
+    <p><strong>Образ результата:</strong> экран, где вы прозрачно видите, что происходит с бизнесами, плюс возможность задать вопрос на естественном языке и получить ответ по данным.</p>
+  </section>
+
+  <!-- 7. MVP -->
+  <section class="slide">
+    <p class="num">06 · Из чего состоит MVP</p>
+    <h2>Тонкий вертикальный срез, а не платформа на всё сразу</h2>
+    <ul>
+      <li><strong>Забор данных — лёгкий.</strong> Ваши таблицы и выгрузки (P&amp;L, банк-выписки): 2–3 источника, не 20</li>
+      <li><strong>Онтология = модель данных.</strong> Обычная база, без переусложнения на старте</li>
+      <li><strong>Экран прозрачности.</strong> Дашборд по направлению + сравнение периодов — это то, что продаёт продукт</li>
+      <li><strong>Вопросы на естественном языке</strong> (опционально) — спросил словами, получил ответ по цифрам</li>
+      <li><strong>Тонкие права доступа.</strong> Владелец видит всё, руководитель — своё направление</li>
+    </ul>
+    <div class="stat" style="grid-template-columns:1fr 1fr">
+      <div class="b"><div class="n">2–3</div><div class="l">инженера в команде</div></div>
+      <div class="b"><div class="n">6–8 нед</div><div class="l">до пилота на живых данных</div></div>
+    </div>
+    <p class="disc">Данные чувствительные → приватный / on-prem контур. Полноценный граф знаний, 20+ интеграций и агенты-действия — это уже развитие после пилота.</p>
+  </section>
+
+  <!-- 8. Этап 2 -->
+  <section class="slide">
+    <p class="num">07 · Этап 2 · Масштаб и партнёрство</p>
+    <h2>От пилота — к «мозгу как услуге» для всех активов</h2>
+    <div class="flow">
+      <div class="step"><div class="s">ШАГ 1</div><div class="h">Один холдинг</div><p>Собираем «мозг» на вашей группе, доказываем ценность на живых деньгах.</p></div>
+      <div class="step"><div class="s">ШАГ 2</div><div class="h">Раскатка</div><p>Тот же слой — на другие направления. Ложится на вашу модель управляющей компании над активами.</p></div>
+      <div class="step"><div class="s">ШАГ 3</div><div class="h">Продукт</div><p>Становится самостоятельным направлением, а не внутренним инструментом.</p></div>
+    </div>
+    <p>Мне интересно не разовое подрядное исполнение, а <strong>партнёрство</strong>: вы вкладываетесь и получаете рабочий продукт на группе, я развиваю его как продукт и расту вместе с вами. Конкретную юридическую конструкцию проработаем отдельно.</p>
+  </section>
+
+  <!-- 9. Монетизация -->
+  <section class="slide">
+    <p class="num">08 · Монетизация</p>
+    <h2>Как это устроено на рынке и что предлагаю</h2>
+    <p>Мировые аналоги берут деньги за доступ к «мозгу компании»:</p>
+    <ul>
+      <li><strong>Glean</strong> (горизонтальный поиск по компании) — порядка <strong>$15–25 на пользователя в месяц</strong>; оценка компании $7.2 млрд, выручка $300M в год</li>
+      <li><strong>Hebbia</strong> (глубокий анализ под финансы и аналитику) — премиальные <strong>$3–15 тыс. за место в год</strong></li>
+      <li>Рынок таких решений: ~$4.2 млрд (2025) → ~$10.5 млрд (2030), рост ~20% в год</li>
+    </ul>
+    <div class="price">
+      <div class="h">Внедрение · Этап 1 <span class="v">≈ 4–8 млн ₽ единоразово</span></div>
+      <p style="margin:2px 0 0">Команда 2–3 инженера × 6–8 недель + архитектура + инфраструктура. Может покрываться вашей инвестицией в продукт.</p>
+    </div>
+    <div class="price">
+      <div class="h">Подписка · после запуска <span class="v">≈ 40–100 тыс ₽ / направление / мес</span></div>
+      <p style="margin:2px 0 0">Хостинг, поддержка и развитие. Либо фикс за холдинг (≈ 0.4–0.9 млн ₽/мес) — растёт по мере подключения активов.</p>
+    </div>
+    <p class="disc">Порядок величины для обсуждения, не оффер. Финал — после аудита объёма и подтверждения ставок команды.</p>
+  </section>
+
+  <!-- 10. Next -->
+  <section class="slide">
+    <p class="num">09 · Следующие шаги</p>
+    <h2>Что предлагаю сделать</h2>
+    <div class="grid2">
+      <div class="card"><div class="t">Мой шаг</div><p>Неделя погружения в одно направление (финконтроль) → образ результата → пилот 6–8 недель → замер ценности → решение о раскатке.</p></div>
+      <div class="card"><div class="t">Что нужно от вас</div><p>Выбрать пилотную компанию, дать доступы и материалы по активам, NDA. Один владелец, который держит контекст.</p></div>
+    </div>
+    <p style="margin-top:14px"><span class="tag">одна кнопка</span><span class="tag">прозрачность</span><span class="tag">мгновенный ROI</span><span class="tag">рост вместе</span></p>
+    <p class="note" style="border-color:var(--accent);color:var(--muted);font-style:normal">Знания в группе уже есть — они просто разрознены. Выигрывает тот, кто первым соберёт их в единый живой слой. Сейчас это преимущество, через 2–3 года — гигиена.</p>
+  </section>
+
+  <div class="foot">Company Brain × SOL-GROUP · конфиденциальный пре-рид</div>
+</div>
+<script>
+  (function(){
+    var b=document.getElementById('tg');
+    b.addEventListener('click',function(){
+      var r=document.documentElement;
+      var cur=r.getAttribute('data-theme');
+      if(!cur){cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}
+      r.setAttribute('data-theme',cur==='dark'?'light':'dark');
+    });
+  })();
+</script>
+</body></html>

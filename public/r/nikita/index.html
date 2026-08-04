@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Никита · натальная карта</title>
+<style>
+  @font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('/fonts/manrope-var.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215}
+  @font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('/fonts/manrope-cyr.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+  @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:100 800;font-display:swap;src:url('/fonts/jetbrains-var.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2074,U+20AC,U+2122,U+2212}
+  :root{
+    --bg:#FBF7EF; --panel:#FFFFFF; --ink:#2A2018; --muted:#6B5D4D; --faint:#B7A48C;
+    --line:rgba(42,32,24,.12); --gold:#C79A3E; --gold-soft:rgba(199,154,62,.12); --gold-ink:#9A7420;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#14110C; --panel:#1E1912; --ink:#F3ECDD; --muted:rgba(243,236,221,.72); --faint:#8A7A63;
+      --line:rgba(255,255,255,.12); --gold:#E3B860; --gold-soft:rgba(227,184,96,.14); --gold-ink:#E6C579; }
+  }
+  :root[data-theme="light"]{ --bg:#FBF7EF; --panel:#FFFFFF; --ink:#2A2018; --muted:#6B5D4D; --faint:#B7A48C; --line:rgba(42,32,24,.12); --gold:#C79A3E; --gold-soft:rgba(199,154,62,.12); --gold-ink:#9A7420; }
+  :root[data-theme="dark"]{ --bg:#14110C; --panel:#1E1912; --ink:#F3ECDD; --muted:rgba(243,236,221,.72); --faint:#8A7A63; --line:rgba(255,255,255,.12); --gold:#E3B860; --gold-soft:rgba(227,184,96,.14); --gold-ink:#E6C579; }
+  *{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px; margin:0 auto; padding:clamp(28px,6vw,64px) clamp(18px,5vw,32px)}
+  .hero{text-align:center; margin:0 0 clamp(20px,4vw,34px)}
+  .stars{font-size:20px; letter-spacing:6px; color:var(--gold); opacity:.85}
+  h1{font-size:clamp(44px,12vw,84px); line-height:1; font-weight:800; letter-spacing:-.03em; margin:14px 0 10px}
+  .born{font-family:var(--mono); font-size:13px; color:var(--muted); letter-spacing:.06em}
+  .sub{font-size:clamp(16px,2.6vw,19px); color:var(--muted); margin:16px auto 0; max-width:34ch}
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:clamp(20px,4vw,34px); margin:0 0 16px}
+  .big3{display:flex; flex-direction:column; gap:14px}
+  .b3{display:flex; gap:14px; align-items:flex-start}
+  .b3 .g{font-size:26px; line-height:1; flex:0 0 auto; margin-top:2px}
+  .b3 .t{font-weight:800; color:var(--ink); font-size:16px; margin:0 0 3px}
+  .b3 .x{font-size:14.5px; color:var(--muted); margin:0}
+  .b3 .t span{font-family:var(--mono); font-size:12px; color:var(--gold-ink); font-weight:600; margin-left:6px}
+  h2{font-size:13px; font-family:var(--mono); font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-ink); margin:0 0 16px; text-align:center}
+  .planets{display:grid; grid-template-columns:1fr 1fr; gap:8px 22px}
+  @media(max-width:520px){.planets{grid-template-columns:1fr}}
+  .pl{display:flex; justify-content:space-between; align-items:baseline; padding:6px 0; border-bottom:1px dashed var(--line); font-size:14.5px}
+  .pl .n{color:var(--muted)} .pl .v{font-family:var(--mono); font-size:13px; color:var(--ink); font-weight:600}
+  .pl .v .r{color:var(--gold-ink); font-size:11px}
+  .summ{text-align:center; font-size:clamp(16px,2.6vw,19px); color:var(--ink); font-style:italic; line-height:1.5; margin:6px 0}
+  .foot{text-align:center; color:var(--faint); font-size:13px; margin-top:24px; line-height:1.7}
+  .foot .h{color:var(--gold); font-size:18px}
+  .toggle{position:fixed; top:14px; right:14px; z-index:9; font-family:var(--mono); font-size:12px; background:var(--panel); color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:7px 13px; cursor:pointer}
+</style>
+</head>
+<body>
+<button class="toggle" id="tg">◐ тема</button>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="stars">✦ · ✦ · ✦</div>
+    <h1>Никита</h1>
+    <div class="born">4 августа 2026 · 8:00 утра · Москва</div>
+    <p class="sub">Тёплое, щедрое, солнечное ядро — с ясной головой и ранней внутренней силой.</p>
+  </div>
+
+  <div class="card">
+    <div class="big3">
+      <div class="b3"><div class="g">☀️</div><div><div class="t">Солнце во Льве <span>с Юпитером рядом</span></div><p class="x">Сердцевина — тёплый, щедрый, солнечный. Соединение Солнца и Юпитера в традиции — одно из самых благословенных: великодушие, оптимизм, удача навстречу. Лидер по природе.</p></div></div>
+      <div class="b3"><div class="g">⬆️</div><div><div class="t">Асцендент в Деве</div><p class="x">Как встречает мир: внимательный, вдумчивый, аккуратный, тянущийся помогать. Львиный блеск внутри — скромная, точная подача снаружи.</p></div></div>
+      <div class="b3"><div class="g">🌙</div><div><div class="t">Луна в Овне <span>рядом с Сатурном</span></div><p class="x">Смелая, самостоятельная, прямая душа. Сатурн рядом даёт раннюю опору — «взрослый внутри», умеет справляться сам.</p></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Небо в час рождения</h2>
+    <div class="planets">
+      <div class="pl"><span class="n">Солнце</span><span class="v">Лев 11°51′</span></div>
+      <div class="pl"><span class="n">Луна</span><span class="v">Овен 17°49′</span></div>
+      <div class="pl"><span class="n">Меркурий</span><span class="v">Рак 22°35′</span></div>
+      <div class="pl"><span class="n">Венера</span><span class="v">Дева 27°21′</span></div>
+      <div class="pl"><span class="n">Марс</span><span class="v">Близнецы 25°13′</span></div>
+      <div class="pl"><span class="n">Юпитер</span><span class="v">Лев 7°40′</span></div>
+      <div class="pl"><span class="n">Сатурн</span><span class="v">Овен 14°41′ <span class="r">R</span></span></div>
+      <div class="pl"><span class="n">Уран</span><span class="v">Близнецы 5°06′</span></div>
+      <div class="pl"><span class="n">Нептун</span><span class="v">Овен 4°12′ <span class="r">R</span></span></div>
+      <div class="pl"><span class="n">Плутон</span><span class="v">Водолей 4°06′ <span class="r">R</span></span></div>
+      <div class="pl"><span class="n">Сев. узел</span><span class="v">Рыбы 0°46′</span></div>
+      <div class="pl"><span class="n">Асцендент</span><span class="v">Дева 13°38′</span></div>
+      <div class="pl"><span class="n">Середина неба</span><span class="v">Близнецы 7°12′</span></div>
+      <div class="pl"><span class="n">Уран на вершине</span><span class="v">призвание своё</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="summ">«Никита» — от греческого «победитель».<br>Солнечный воин с тёплым сердцем.</p>
+  </div>
+
+  <div class="foot">
+    <div class="h">❤</div>
+    С любовью, в день, когда ты появился на свет.<br>
+    <span style="font-size:11px;opacity:.7">Положения планет посчитаны астрономически (Swiss Ephemeris). Астрология — язык символов, не наука; это тёплый портрет на память.</span>
+  </div>
+
+</div>
+<script>
+  (function(){var b=document.getElementById('tg');b.addEventListener('click',function(){var r=document.documentElement,cur=r.getAttribute('data-theme');if(!cur){cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}r.setAttribute('data-theme',cur==='dark'?'light':'dark');});})();
+</script>
+</body></html>

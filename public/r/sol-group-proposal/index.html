@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Company Brain для SOL-GROUP — предложение</title>
+<style>
+  @font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('/fonts/manrope-var.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215}
+  @font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('/fonts/manrope-cyr.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+  @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:100 800;font-display:swap;src:url('/fonts/jetbrains-var.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2074,U+20AC,U+2122,U+2212}
+  :root{ --bg:#F5F5F4; --panel:#FFFFFF; --ink:#1C1917; --muted:#57534E; --faint:#A8A29E;
+    --line:rgba(28,25,23,.12); --line-strong:rgba(28,25,23,.22); --accent:#FF4D14; --accent-soft:rgba(255,77,20,.10); --accent-ink:#B23A0F;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace; }
+  @media (prefers-color-scheme:dark){ :root{ --bg:#1C1917; --panel:#292524; --ink:#FAFAF9; --muted:rgba(250,250,249,.72);
+    --faint:#8A827C; --line:rgba(255,255,255,.15); --line-strong:rgba(255,255,255,.24); --accent:#FF6A3D; --accent-soft:rgba(255,106,61,.16); --accent-ink:#FF8A5C; } }
+  :root[data-theme="light"]{ --bg:#F5F5F4; --panel:#FFFFFF; --ink:#1C1917; --muted:#57534E; --faint:#A8A29E; --line:rgba(28,25,23,.12); --line-strong:rgba(28,25,23,.22); --accent:#FF4D14; --accent-soft:rgba(255,77,20,.10); --accent-ink:#B23A0F; }
+  :root[data-theme="dark"]{ --bg:#1C1917; --panel:#292524; --ink:#FAFAF9; --muted:rgba(250,250,249,.72); --faint:#8A827C; --line:rgba(255,255,255,.15); --line-strong:rgba(255,255,255,.24); --accent:#FF6A3D; --accent-soft:rgba(255,106,61,.16); --accent-ink:#FF8A5C; }
+  *{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased; font-feature-settings:"ss01","cv01"}
+  .wrap{max-width:920px; margin:0 auto; padding:clamp(20px,5vw,56px) clamp(16px,4vw,32px)}
+  .slide{background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:clamp(24px,4.5vw,44px); margin:0 0 clamp(16px,3vw,26px); position:relative; overflow:hidden}
+  .num{font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:.08em; color:var(--accent-ink); text-transform:uppercase; display:inline-flex; align-items:center; gap:8px; margin:0 0 14px}
+  .num::before{content:""; width:22px; height:1.5px; background:var(--accent); display:inline-block}
+  h1{font-size:clamp(28px,5.6vw,50px); line-height:1.06; font-weight:800; letter-spacing:-.02em; margin:0 0 16px}
+  h2{font-size:clamp(21px,3.8vw,31px); line-height:1.13; font-weight:800; letter-spacing:-.015em; margin:0 0 14px}
+  h3{font-size:clamp(17px,3vw,21px); font-weight:800; margin:6px 0 8px; color:var(--ink); letter-spacing:-.01em}
+  .lead{font-size:clamp(16px,2.4vw,19px); color:var(--muted); margin:0 0 8px}
+  p{margin:0 0 12px; color:var(--muted); font-size:clamp(15px,2vw,17px)}
+  strong{color:var(--ink); font-weight:700}
+  .kicker{font-family:var(--mono); font-size:13px; color:var(--faint); letter-spacing:.04em; margin:0 0 10px}
+  .meta{font-family:var(--mono); font-size:12.5px; color:var(--faint); margin-top:22px; display:flex; flex-wrap:wrap; gap:6px 18px}
+  .toc{font-family:var(--mono); font-size:12.5px; color:var(--muted); margin-top:20px; display:flex; flex-wrap:wrap; gap:6px 14px}
+  .toc span{color:var(--faint)}
+  ul{margin:6px 0 12px; padding:0; list-style:none}
+  li{position:relative; padding-left:22px; margin:0 0 9px; color:var(--muted); font-size:clamp(14.5px,2vw,16px)}
+  li::before{content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--accent)}
+  li strong{color:var(--ink)}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:8px 0 4px}
+  @media(max-width:620px){.grid2{grid-template-columns:1fr}}
+  .card{background:var(--accent-soft); border:1px solid var(--line); border-radius:12px; padding:16px 18px}
+  .card .t{font-weight:700; color:var(--ink); font-size:15px; margin:0 0 4px}
+  .card p{font-size:14px; margin:0}
+  .ladder{margin:14px 0 4px; display:flex; flex-direction:column; gap:9px}
+  .rung{border:1px solid var(--line); border-radius:12px; padding:12px 15px 12px 17px; background:var(--bg); position:relative}
+  .rung::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px; border-radius:4px 0 0 4px; background:var(--accent)}
+  .rung b{color:var(--ink)} .rung .l{font-family:var(--mono); font-size:11px; color:var(--accent-ink); font-weight:600; text-transform:uppercase; letter-spacing:.05em}
+  .rung .x{font-size:14px; color:var(--muted)}
+  .opt{border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:0 0 13px; background:var(--bg)}
+  .opt.rec{border:1.5px solid var(--accent); background:var(--accent-soft)}
+  .opt .lbl{font-family:var(--mono); font-size:11.5px; font-weight:600; letter-spacing:.06em; color:var(--accent-ink); text-transform:uppercase; display:flex; justify-content:space-between; align-items:center}
+  .opt .badge{background:var(--accent); color:#fff; border-radius:999px; padding:2px 10px; font-size:10.5px}
+  .opt .sub{font-size:14px; color:var(--muted); margin:6px 0 8px}
+  .price{border:1px solid var(--line-strong); border-radius:12px; padding:15px 18px; margin:8px 0; background:var(--bg)}
+  .price .h{font-weight:800; color:var(--ink); font-size:16px; margin:0 0 3px; display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap}
+  .price .v{font-family:var(--mono); font-size:14px; color:var(--accent-ink); font-weight:700}
+  .price p{font-size:13.5px; margin:2px 0 0}
+  .big{font-family:var(--mono); font-weight:700; color:var(--ink); font-size:clamp(20px,4vw,28px); letter-spacing:-.01em}
+  .note{border-left:2px solid var(--accent); padding:2px 0 2px 14px; margin:14px 0 2px; color:var(--muted); font-size:14.5px}
+  .disc{font-size:12.5px; color:var(--faint); margin-top:10px}
+  .arch{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:10px 0 4px}
+  @media(max-width:620px){.arch{grid-template-columns:1fr}}
+  .arch .a{border:1px solid var(--line); border-radius:12px; padding:14px 16px; background:var(--bg)}
+  .arch .a .t{font-weight:700; color:var(--ink); font-size:14.5px; margin:0 0 3px}
+  .arch .a p{font-size:13.5px; margin:0}
+  .tag{display:inline-block; font-family:var(--mono); font-size:11px; color:var(--accent-ink); background:var(--accent-soft); border-radius:999px; padding:3px 10px; margin:0 6px 6px 0}
+  .toggle{position:fixed; top:14px; right:14px; z-index:9; font-family:var(--mono); font-size:12px; background:var(--panel); color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:7px 13px; cursor:pointer}
+  .foot{text-align:center; color:var(--faint); font-family:var(--mono); font-size:12px; padding:8px 0 30px}
+</style>
+</head>
+<body>
+<button class="toggle" id="tg">◐ тема</button>
+<div class="wrap">
+
+  <!-- Титул -->
+  <section class="slide">
+    <p class="kicker">Предложение · конфиденциально</p>
+    <h1>Company&nbsp;Brain для&nbsp;SOL-GROUP</h1>
+    <p class="lead">Единый «мозг» группы: что это, какую ценность несёт и как растёт — форматы сотрудничества и коммерческие условия запуска.</p>
+    <div class="toc"><span>01</span> Что это и ценность <span>·</span> <span>02</span> Как растёт <span>·</span> <span>03</span> Архитектура <span>·</span> <span>04</span> Форматы <span>·</span> <span>05</span> Условия запуска</div>
+    <div class="meta"><span>Евгений Шильников</span><span>—</span><span>для партнёра SOL-GROUP</span></div>
+  </section>
+
+  <!-- 01 Что это -->
+  <section class="slide">
+    <p class="num">01 · Что это и какую ценность несёт</p>
+    <h2>Единый «мозг» группы компаний</h2>
+    <p>Company Brain собирает знания группы из разрозненных источников, классифицирует и обогащает их, держит актуальными и отвечает сразу. Для холдинга это <strong>живая цифровая версия управляющей компании</strong>: не звонки и «спрошу у партнёра», а одна система, которая знает состояние каждого направления.</p>
+    <div class="grid2">
+      <div class="card"><div class="t">Одна кнопка → вся картина</div><p>Доходы, расходы, метрики, статусы и узкие места по каждому направлению в реальном времени.</p></div>
+      <div class="card"><div class="t">Решения на данных</div><p>Контекст между операционным управлением и руководителями оцифрован и не теряется.</p></div>
+      <div class="card"><div class="t">Экономия времени</div><p>Меньше ручного сбора — освобождается самый дорогой ресурс: внимание управленцев.</p></div>
+      <div class="card"><div class="t">Платформа для роста</div><p>Как только данные в одном месте — поверх автоматизируется рутина: сверки, отчёты, обращения.</p></div>
+    </div>
+    <p class="note">Почему сейчас: стоимость AI-модели упала почти до нуля — дефицит сместился с технологии на контекст компании. Планка зрелости 2026 — не «пользуетесь ли вы AI», а «делает&nbsp;ли&nbsp;AI самостоятельную работу». Окно: сегодня преимущество, через 2–3 года — гигиена.</p>
+  </section>
+
+  <!-- 02 Как растёт -->
+  <section class="slide">
+    <p class="num">02 · Как растёт ценность</p>
+    <h2>Лестница: чем глубже данные и интеграции — тем больше отдача</h2>
+    <div class="ladder">
+      <div class="rung"><span class="l">Слой 1 · Фундамент</span><div class="x"><b>Единое хранилище.</b> Данные собраны, классифицированы, обогащены. → перестаём терять и искать.</div></div>
+      <div class="rung"><span class="l">Слой 2 · Прозрачность</span><div class="x"><b>«Одна кнопка → вся картина».</b> Состояние каждого направления в реальном времени. → решения быстрее.</div></div>
+      <div class="rung"><span class="l">Слой 3 · Контекст</span><div class="x"><b>Решения на данных.</b> Накопленный контекст обосновывает выбор и подсвечивает риски. → качество решений.</div></div>
+      <div class="rung"><span class="l">Слой 4 · Автоматизация</span><div class="x"><b>Ручные процессы → авто.</b> Сбор, пересчёт, сверки, отчёты. → высвобождается время команд.</div></div>
+      <div class="rung"><span class="l">Слой 5 · Автономность</span><div class="x"><b>Решения без человека</b> в заданных границах. → AI делает самостоятельную работу.</div></div>
+    </div>
+    <p class="disc">Финансы как пример: сначала видим картину по каждому бизнесу → затем автоматизируем сбор и пересчёт → далее сверки идут без человека.</p>
+  </section>
+
+  <!-- 03 Архитектура -->
+  <section class="slide">
+    <p class="num">03 · Архитектура и почему это надёжно</p>
+    <h2>Построено на проверенном опенсорсе, готово к РФ-облакам</h2>
+    <div class="arch">
+      <div class="a"><div class="t">Комплаенс и без вендор-лока</div><p>Только опенсорс, cloud-agnostic. Разворачивание в Я.Облаке, Селектеле и других легитимных в РФ провайдерах.</p></div>
+      <div class="a"><div class="t">Выбор LLM под вашу ИБ</div><p>Model gateway: Claude, GPT, YaGPT, GigaChat, DeepSeek. Модель выбирается под требования безопасности заказчика.</p></div>
+      <div class="a"><div class="t">Стейкхолдеры настраивают агентов сами</div><p>Персона агента (описание работы + навыки) создаётся и правится самим владельцем направления, без разработчиков.</p></div>
+      <div class="a"><div class="t">Продукт умнеет со временем</div><p>Слой самообучения накапливает обратную связь и принятые решения — качество ответов растёт.</p></div>
+      <div class="a"><div class="t">Встраивается в ваши инструменты</div><p>Веб-интерфейс как фрейм + MCP/API для интеграций в мессенджеры и системы — не «ещё одна система».</p></div>
+      <div class="a"><div class="t">Строгие доступы</div><p>Слой ролей: кто к каким данным и персонам имеет доступ — под структуру группы.</p></div>
+    </div>
+    <p class="disc">Ядро — Onyx (индекс, агенты, оркестрация) + Cognee (самообучение) + слой расчётов и сверок (SQL для решений на финданных). Дифференциация — в онтологии, самообучении и РФ-комплаенсе.</p>
+  </section>
+
+  <!-- 04 Форматы -->
+  <section class="slide">
+    <p class="num">04 · Форматы сотрудничества</p>
+    <h2>От подряда — к совместному продукту</h2>
+    <div class="opt">
+      <div class="lbl"><span>Формат 1</span></div>
+      <h3>Подрядная разработка</h3>
+      <p class="sub">Делаем кастомный Company Brain под ваши цели, оплата за работу.</p>
+      <ul><li>Решение под вашу группу, полный контроль постановки</li><li>Быстрый старт, понятная смета</li></ul>
+    </div>
+    <div class="opt">
+      <div class="lbl"><span>Формат 2</span></div>
+      <h3>AI-направление внутри группы</h3>
+      <p class="sub">Создаём внутри SOL-GROUP направление, внедряющее AI — в группе и у ваших клиентов.</p>
+      <ul><li>Собственное AI-направление как новый бизнес группы</li><li>Продукты, масштабируемые на вашу клиентскую базу</li></ul>
+    </div>
+    <div class="opt rec">
+      <div class="lbl"><span>Формат 3</span><span class="badge">рекомендуем</span></div>
+      <h3>Продуктовое партнёрство</h3>
+      <p class="sub">Строим Company Brain как отдельную продуктовую компанию. Вы — якорный партнёр-инвестор и первый клиент.</p>
+      <ul>
+        <li>Рабочий продукт на вашей группе + <strong>доля как инвестор</strong></li>
+        <li><strong>Ваши клиенты как новый рынок</strong> — доход группы с каждого внедрения</li>
+        <li>Рост в стоимости продукта по мере масштабирования</li>
+      </ul>
+      <p class="note" style="margin-top:10px">Забирает лучшее из Формата 2 (клиенты, deal flow) и превращает разовую разработку в растущий актив, где вы совладелец.</p>
+    </div>
+  </section>
+
+  <!-- 05 Коммерческие условия -->
+  <section class="slide">
+    <p class="num">05 · Коммерческие условия запуска</p>
+    <h2>Запускаем с пилота на одном направлении</h2>
+    <p>Начинаем с финансового контроля — там уже есть команда, которая ведёт «мозг» вручную. Оцифровываем то, что они делают → мгновенная отдача + фундамент данных.</p>
+
+    <div class="price">
+      <div class="h"><span>Этап 1 · Discovery</span> <span class="v">≈ 2 недели</span></div>
+      <p>Интервью с 3–5 сотрудниками, разбор форматов документов, образ результата. Параллельно — разворачивание инфраструктуры.</p>
+    </div>
+    <div class="price">
+      <div class="h"><span>Этап 2 · Сборка и пилот MVP</span> <span class="v">≈ 4–6 недель</span></div>
+      <p>Онтология, ключевой экран прозрачности, забор данных, расчёты. Пилот на живых данных 3–5 направлений.</p>
+    </div>
+
+    <div class="price" style="border-color:var(--accent)">
+      <div class="h"><span>Инвестиция в запуск</span> <span class="big">≈ 2,3–2,5 млн ₽</span></div>
+      <p>Команда: 2 senior-инженера (AI + fullstack/infra) + продуктовый лид. Срок ~6–8 недель. Инфраструктура и токены — по факту, ~$1–1,5k/мес с потолком.</p>
+    </div>
+
+    <div class="grid2" style="margin-top:6px">
+      <div class="card"><div class="t">Входит в пилот</div><p>Онтология, ключевой экран, 2–3 источника данных, базовые роли, 1 LLM, расчёты по финданным.</p></div>
+      <div class="card"><div class="t">Фаза развития (после)</div><p>Самообучение, широкий слой коннекторов, автоматизация процессов, раскатка на направления.</p></div>
+    </div>
+
+    <div class="note">Как ценим то, что ещё не измерено: до старта фиксируем метрики (часы команды, скорость решений, ошибки), после пилота — меряем. Дальнейшая экономика (подписка на платформу + поддержка и развитие) опирается на доказанный результат, а не на обещания.</div>
+    <p class="disc">Ориентир для запуска, финализируется по итогам Discovery. Подписка и поддержка после запуска — отдельный слой, обсуждаем по результатам пилота.</p>
+  </section>
+
+  <!-- Что нужно + next -->
+  <section class="slide">
+    <p class="num">06 · Что нужно и следующий шаг</p>
+    <div class="grid2">
+      <div class="card"><div class="t">Что нужно от вас</div><p>Пилотная компания (напр. финконтроль), доступ к данным и материалам, NDA, один владелец, который держит контекст и принимает решения.</p></div>
+      <div class="card"><div class="t">Что делаем мы</div><p>Discovery → образ результата → рабочий экран за 6–8 недель → замер ценности → выбор формата масштабирования.</p></div>
+    </div>
+    <p style="margin-top:14px"><span class="tag">одна кнопка</span><span class="tag">РФ-комплаенс</span><span class="tag">измеримая ценность</span><span class="tag">рост вместе</span></p>
+    <p class="note" style="border-color:var(--accent);color:var(--muted)">Знания в группе уже есть — они просто разрознены. Выигрывает тот, кто первым соберёт их в единый живой слой.</p>
+  </section>
+
+  <div class="foot">Company Brain × SOL-GROUP · конфиденциальное предложение</div>
+</div>
+<script>
+  (function(){var b=document.getElementById('tg');b.addEventListener('click',function(){var r=document.documentElement,cur=r.getAttribute('data-theme');if(!cur){cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}r.setAttribute('data-theme',cur==='dark'?'light':'dark');});})();
+</script>
+</body></html>

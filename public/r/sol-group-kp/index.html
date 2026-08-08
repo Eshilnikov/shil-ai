@@ -17,16 +17,17 @@
   :root[data-theme="dark"]{ --bg:#1C1917; --panel:#292524; --ink:#FAFAF9; --muted:rgba(250,250,249,.72); --faint:#8A827C; --line:rgba(255,255,255,.15); --line-strong:rgba(255,255,255,.24); --accent:#FF6A3D; --accent-soft:rgba(255,106,61,.16); --accent-ink:#FF8A5C; }
   *{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
   body{margin:0; background:var(--bg); color:var(--ink); font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased; font-feature-settings:"ss01","cv01"}
-  .wrap{max-width:920px; margin:0 auto; padding:clamp(20px,5vw,56px) clamp(16px,4vw,32px)}
+  .wrap{max-width:900px; margin:0 auto; padding:clamp(20px,5vw,56px) clamp(16px,4vw,32px)}
   .slide{background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:clamp(24px,4.5vw,44px); margin:0 0 clamp(16px,3vw,26px); position:relative; overflow:hidden}
   .num{font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:.08em; color:var(--accent-ink); text-transform:uppercase; display:inline-flex; align-items:center; gap:8px; margin:0 0 14px}
   .num::before{content:""; width:22px; height:1.5px; background:var(--accent); display:inline-block}
   h1{font-size:clamp(28px,5.6vw,50px); line-height:1.06; font-weight:800; letter-spacing:-.02em; margin:0 0 16px}
   h2{font-size:clamp(21px,3.8vw,31px); line-height:1.13; font-weight:800; letter-spacing:-.015em; margin:0 0 14px}
-  h3{font-size:clamp(17px,3vw,21px); font-weight:800; margin:16px 0 8px; color:var(--ink); letter-spacing:-.01em}
+  h3{font-size:clamp(16px,2.7vw,19px); font-weight:800; margin:16px 0 8px; color:var(--ink); letter-spacing:-.01em}
   .lead{font-size:clamp(16px,2.4vw,19px); color:var(--muted); margin:0 0 8px}
   p{margin:0 0 12px; color:var(--muted); font-size:clamp(15px,2vw,17px)}
   strong{color:var(--ink); font-weight:700}
+  em{font-style:normal; font-family:var(--mono); font-size:.82em; color:var(--accent-ink)}
   .kicker{font-family:var(--mono); font-size:13px; color:var(--faint); letter-spacing:.04em; margin:0 0 10px}
   .meta{font-family:var(--mono); font-size:12.5px; color:var(--faint); margin-top:22px; display:flex; flex-wrap:wrap; gap:6px 18px}
   .toc{font-family:var(--mono); font-size:12.5px; color:var(--muted); margin-top:20px; display:flex; flex-wrap:wrap; gap:6px 14px}
@@ -35,26 +36,19 @@
   li{position:relative; padding-left:22px; margin:0 0 9px; color:var(--muted); font-size:clamp(14.5px,2vw,16px)}
   li::before{content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--accent)}
   li strong{color:var(--ink)}
-  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:8px 0 4px}
-  @media(max-width:620px){.grid2{grid-template-columns:1fr}}
-  .card{background:var(--accent-soft); border:1px solid var(--line); border-radius:12px; padding:16px 18px}
-  .card .t{font-weight:700; color:var(--ink); font-size:15px; margin:0 0 4px}
-  .card p{font-size:14px; margin:0}
-  .ladder{margin:14px 0 4px; display:flex; flex-direction:column; gap:9px}
-  .rung{border:1px solid var(--line); border-radius:12px; padding:12px 15px 12px 17px; background:var(--bg); position:relative}
-  .rung::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px; border-radius:4px 0 0 4px; background:var(--accent)}
-  .rung b{color:var(--ink)} .rung .l{font-family:var(--mono); font-size:11px; color:var(--accent-ink); font-weight:600; text-transform:uppercase; letter-spacing:.05em}
-  .rung .x{font-size:14px; color:var(--muted)}
-  .note{border-left:2px solid var(--accent); padding:2px 0 2px 14px; margin:14px 0 2px; color:var(--muted); font-size:14.5px}
-  .disc{font-size:12.5px; color:var(--faint); margin-top:10px}
   .arch{display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin:10px 0 4px}
   @media(max-width:620px){.arch{grid-template-columns:1fr}}
   .arch .a{border:1px solid var(--line); border-radius:12px; padding:14px 16px; background:var(--bg)}
   .arch .a .t{font-weight:700; color:var(--ink); font-size:14.5px; margin:0 0 3px}
   .arch .a p{font-size:13.5px; margin:0}
+  .ladder{margin:10px 0 4px; display:flex; flex-direction:column; gap:9px}
+  .rung{border:1px solid var(--line); border-radius:12px; padding:12px 15px 12px 17px; background:var(--bg); position:relative}
+  .rung::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px; border-radius:4px 0 0 4px; background:var(--accent)}
+  .rung .l{font-family:var(--mono); font-size:11px; color:var(--accent-ink); font-weight:600; text-transform:uppercase; letter-spacing:.05em}
+  .rung .x{font-size:14px; color:var(--muted)} .rung b{color:var(--ink)}
+  .note{border-left:2px solid var(--accent); padding:2px 0 2px 14px; margin:14px 0 2px; color:var(--muted); font-size:14.5px}
+  .disc{font-size:12.5px; color:var(--faint); margin-top:10px}
   .tag{display:inline-block; font-family:var(--mono); font-size:11px; color:var(--accent-ink); background:var(--accent-soft); border-radius:999px; padding:3px 10px; margin:0 6px 6px 0}
-  .warn{border:1px solid var(--accent); background:var(--accent-soft); border-radius:12px; padding:14px 16px; margin:14px 0 2px}
-  .warn p{margin:0; font-size:14px}
   /* tasks / stages */
   .tasks{display:flex; flex-direction:column; gap:8px; margin:10px 0 6px}
   .task{border:1px solid var(--line); border-radius:12px; padding:12px 15px; background:var(--bg)}
@@ -65,16 +59,16 @@
   .task.total{background:var(--accent-soft); border-color:var(--accent)}
   .task.total .task-t{font-weight:800}
   .stage-note{font-size:13.5px; color:var(--muted); margin:4px 0 8px}
-  .stage-head{font-family:var(--mono); font-size:12.5px; color:var(--accent-ink); font-weight:700; letter-spacing:.03em; margin:18px 0 2px}
+  .stage-head{font-family:var(--mono); font-size:12.5px; color:var(--accent-ink); font-weight:700; letter-spacing:.03em; margin:20px 0 4px}
   /* team */
-  .person{border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin:0 0 12px; background:var(--bg)}
-  .person .pn{font-weight:800; color:var(--ink); font-size:16px; margin:0 0 2px}
-  .person .pr{font-family:var(--mono); font-size:11.5px; color:var(--accent-ink); text-transform:uppercase; letter-spacing:.05em; margin:0 0 7px}
-  .person p{font-size:14px; margin:0 0 8px}
-  .companies{display:flex; flex-wrap:wrap; gap:6px}
+  .person{border:1px solid var(--line); border-radius:12px; padding:13px 16px; margin:0 0 9px; background:var(--bg)}
+  .person .pn{font-weight:800; color:var(--ink); font-size:15.5px}
+  .person .pr{font-family:var(--mono); font-size:11px; color:var(--accent-ink); text-transform:uppercase; letter-spacing:.04em}
+  .person p{font-size:13.5px; margin:5px 0 7px}
+  .companies{display:flex; flex-wrap:wrap; gap:5px}
   /* numbered */
   .ol{list-style:none; counter-reset:s; padding:0; margin:10px 0 4px}
-  .ol li{counter-increment:s; padding-left:42px; margin:0 0 13px; position:relative; color:var(--muted); font-size:clamp(14.5px,2vw,16px)}
+  .ol li{counter-increment:s; padding-left:42px; margin:0 0 12px; position:relative; color:var(--muted); font-size:clamp(14.5px,2vw,16px)}
   .ol li::before{content:counter(s); position:absolute; left:0; top:-2px; width:27px; height:27px; border-radius:50%; background:var(--accent); color:#fff; font-family:var(--mono); font-weight:700; font-size:13px; display:flex; align-items:center; justify-content:center}
   .toggle{position:fixed; top:14px; right:14px; z-index:9; font-family:var(--mono); font-size:12px; background:var(--panel); color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:7px 13px; cursor:pointer}
   .foot{text-align:center; color:var(--faint); font-family:var(--mono); font-size:12px; padding:8px 0 30px}
@@ -89,7 +83,7 @@
     <p class="kicker">Коммерческое предложение · конфиденциально</p>
     <h1>Company&nbsp;Brain для&nbsp;SOL-GROUP</h1>
     <p class="lead">Единый «мозг» группы компаний: что это, какую ценность приносит, кто делает, этапы и стоимость.</p>
-    <div class="toc"><span>01</span> Контекст <span>·</span> <span>02</span> Что предлагаем <span>·</span> <span>03</span> Команда <span>·</span> <span>04</span> Этапы работ <span>·</span> <span>05</span> Что нужно от вас <span>·</span> <span>06</span> Порядок запуска</div>
+    <div class="toc"><span>01</span> Контекст <span>·</span> <span>02</span> Что предлагаем <span>·</span> <span>03</span> Команда <span>·</span> <span>04</span> Этапы работ <span>·</span> <span>05</span> Порядок запуска <span>·</span> <span>06</span> Что нужно от вас</div>
     <div class="meta"><span>Евгений Шильников</span><span>—</span><span>для SOL-GROUP</span></div>
   </section>
 
@@ -97,81 +91,64 @@
   <section class="slide">
     <p class="num">01 · Контекст</p>
     <h2>Что известно на сегодня</h2>
-    <p>SOL-GROUP — портфель разрозненных бизнесов (≈ 30 направлений) по миру. Управление сейчас держится на ручном финансовом контроле: команда финансистов вручную собирает данные по бизнесам и следит за показателями — это, по сути, и есть «мозг компании», только собранный руками.</p>
-    <p>Владелец хочет управлять портфелем «с планшета»: видеть финансовые показатели, движение к целям, статус проектов. Уже используются 1С и Битрикс; единого прозрачного слоя над бизнесами нет.</p>
-    <p class="note"><strong>Боль:</strong> непрозрачность и разрозненность данных → медленные и «на ощупь» управленческие решения.</p>
+    <p>SOL-GROUP — портфель из ≈ 30 разрозненных бизнесов. Управление держится на ручном финансовом контроле: команда сводит данные по бизнесам руками. Владелец хочет управлять «с планшета» — видеть показатели, движение к целям, статусы проектов. Есть 1С и Битрикс, единого прозрачного слоя над бизнесами нет.</p>
+    <p class="note"><strong>Боль:</strong> данные разрознены → решения медленные и «на ощупь».</p>
   </section>
 
   <!-- 02 Что предлагаем -->
   <section class="slide">
     <p class="num">02 · Что предлагаем</p>
     <h2>Company Brain — единый ИИ-слой над всей группой</h2>
-    <p>Это не дашборд и не ещё одна система учёта: это «мозг», который собирает разрозненные данные ваших бизнесов в одну живую картину, держит её актуальной и даёт ответ на вопрос сразу.</p>
-    <p>Аналогия из вашего мира: у вас есть управляющая компания — надстройка над активами. Company Brain — это её живая, цифровая версия: не папки, не звонки и не сбор картины по кусочкам, а одна система, которая знает актуальное состояние каждого направления.</p>
-
-    <h3>Как это работает</h3>
-    <p>Система подключается к вашим существующим источникам — финансовые таблицы, 1С, Битрикс, отчёты, документы, записи встреч, совещаний, чаты — сама собирает и приводит данные к единому виду, связывает их в общую модель «что происходит по группе» и обновляется по мере поступления новой информации. Ответы вы получаете в любом удобном формате:</p>
+    <p>Не дашборд и не система учёта, а «мозг»: собирает данные всех бизнесов в одну живую базу данных, держит её актуальной и отвечает на вопрос сразу.</p>
+    <p>Система сама подключается к вашим источникам (финансовые таблицы, 1С, Битрикс, документы, записи встреч, чаты) и приводит данные к единому виду. Ответы — в удобном формате:</p>
     <div class="arch">
-      <div class="a"><div class="t">Чат с ИИ-помощником</div><p>Ваш корпоративный ChatGPT — можно настроить и в Telegram.</p></div>
-      <div class="a"><div class="t">Веб-приложение</div><p>Персональный экран с полной картиной по всем бизнесам.</p></div>
-      <div class="a"><div class="t">Отчёты на почту</div><p>Ежедневные сводки или любой привычный формат.</p></div>
+      <div class="a"><div class="t">Чат с ИИ-помощником</div><p>В том числе в Telegram.</p></div>
+      <div class="a"><div class="t">Веб-приложение</div><p>Полная картина по всем бизнесам.</p></div>
+      <div class="a"><div class="t">Отчёты на почту</div><p>В привычном формате.</p></div>
     </div>
 
     <h3>Ценность</h3>
     <ul>
-      <li><strong>Прозрачность</strong> — одна картина по всем разрозненным бизнесам, без ручного сведения.</li>
-      <li><strong>Скорость решений</strong> — состояние направления и отклонения от целей видно за секунды, а не через недели сбора данных.</li>
-      <li><strong>Контроль целей и проектов</strong> — движение к целям и статус проектов в одном месте (то самое «управление с планшета»).</li>
-      <li><strong>Раннее обнаружение проблем</strong> — узкие места и отклонения подсвечиваются, а не всплывают постфактум.</li>
-      <li><strong>Управляемость масштаба</strong> — чем больше бизнесов в группе, тем дороже их разрозненность и тем ценнее единый слой.</li>
-      <li><strong>Актив, а не разовый отчёт</strong> — накопленный контекст остаётся у компании и переиспользуется.</li>
+      <li><strong>Прозрачность</strong> — одна картина по всем бизнесам без ручного сведения.</li>
+      <li><strong>Скорость</strong> — состояние направления и отклонения от целей видно за секунды.</li>
+      <li><strong>Контроль</strong> целей и проектов в одном месте.</li>
+      <li><strong>Раннее обнаружение</strong> узких мест и отклонений.</li>
+      <li><strong>Актив, который дорожает</strong> — чем дольше работает, тем больше контекста накапливает и тем больше берёт на себя.</li>
     </ul>
 
-    <h3>Как ценность растёт со временем</h3>
-    <p>Company Brain — актив, который дорожает с каждым месяцем: чем дольше он работает, тем больше контекста накапливает (данные, решения и их исходы) — тем точнее отвечает и тем больше берёт на себя. Развитие идёт стадиями:</p>
+    <h3>Стадии роста</h3>
     <div class="ladder">
-      <div class="rung"><span class="l">Стадия 1 · Библиотека знаний</span><div class="x"><b>Единый удобный доступ к тому, что происходит:</b> спросил — сразу получил ответ, прозрачность по группе.</div></div>
-      <div class="rung"><span class="l">Стадия 2 · Агенты вместо людей</span><div class="x"><b>На накопленном контексте ИИ-агенты выполняют часть рутины:</b> сверки, отчёты, обработка обращений, подготовка сводок.</div></div>
-      <div class="rung"><span class="l">Стадия 3 · ИИ-советник / автопилот</span><div class="x"><b>Система помнит прошлые решения и их результаты,</b> учится на них и начинает подсказывать и оптимизировать решения, предупреждать о рисках заранее.</div></div>
+      <div class="rung"><span class="l">Стадия 1 · База данных</span><div class="x">Спросил — сразу получил ответ.</div></div>
+      <div class="rung"><span class="l">Стадия 2 · Агенты</span><div class="x">Выполняют рутинные задачи — сверки, отчёты, статусы по задачам.</div></div>
+      <div class="rung"><span class="l">Стадия 3 · ИИ-советник</span><div class="x">Подсказывает решения и предупреждает о рисках заранее.</div></div>
     </div>
-    <p class="disc">Разовый отчёт устаревает; этот актив, наоборот, со временем умнеет и всё больше отдаёт.</p>
 
-    <div class="warn">
-      <p><strong>Важное условие — фундамент.</strong> Company Brain работает только на оцифрованном контексте. Пока данные и коммуникация не приведены в единый цифровой вид, «мозгу» нечего анализировать. Если сейчас информационные потоки не оцифрованы — их оцифровка и внедрение этих инструментов становятся <strong>одной из ключевых задач проекта</strong>. Без этого фундамента система не даёт результата; с ним — начинает приносить ценность сразу.</p>
-    </div>
+    <p class="note"><strong>Фундамент:</strong> система работает только на оцифрованном контексте. Если данные и коммуникация не в цифре — их оцифровка становится одной из ключевых задач проекта.</p>
   </section>
 
   <!-- 03 Команда -->
   <section class="slide">
     <p class="num">03 · Команда</p>
     <h2>Кто делает</h2>
-    <p>Над проектом работает команда с опытом создания ИИ-систем в промышленной эксплуатации — архитектура, данные, языковые модели, интерфейсы.</p>
-
+    <p>Команда с опытом создания ИИ-систем в промышленной эксплуатации:</p>
     <div class="person">
-      <div class="pn">Андрей Романовский</div>
-      <div class="pr">Технический директор проекта</div>
-      <p>CTO и стратегический технический советник, ранее — директор по инженерии в Yandex (Лавка, Еда, Такси) и Yango. Строил и перестраивал инженерные организации 100+ человек, вёл технологическую сторону сделок M&amp;A на $500M+, запускал продукты с нуля. Сейчас консультирует первых лиц компаний по цифровой и ИИ-трансформации, в том числе в ритейле и агрохолдингах. Отвечает за архитектуру решения и инженерное лидерство.</p>
+      <div><span class="pn">Андрей Романовский</span> — <span class="pr">технический директор</span></div>
+      <p>CTO, ранее директор по инженерии в Yandex (Лавка, Еда, Такси), сделки M&amp;A на $500M+, ИИ-трансформация ритейла.</p>
       <div class="companies"><span class="tag">Yandex</span><span class="tag">Yango</span><span class="tag">Tinkoff</span></div>
     </div>
-
     <div class="person">
-      <div class="pn">Михаил Шмонов</div>
-      <div class="pr">Руководство разработкой и инфраструктура</div>
-      <p>8+ лет создаёт и масштабирует ИИ-продукты; собирал инженерные команды 20+ человек, отвечал за промышленную эксплуатацию корпоративных языковых моделей (в том числе на закрытом контуре компании) и построение платформ данных. Работал в ритейле и финтехе, выстраивает разработку под бизнес-цели.</p>
+      <div><span class="pn">Михаил Шмонов</span> — <span class="pr">разработка и инфраструктура</span></div>
+      <p>8+ лет ИИ-продуктов, команды 20+, корпоративные языковые модели на закрытом контуре.</p>
       <div class="companies"><span class="tag">Yandex</span><span class="tag">ВТБ</span><span class="tag">Сколково</span></div>
     </div>
-
     <div class="person">
-      <div class="pn">Иван Черданцев</div>
-      <div class="pr">Ведущий инженер ИИ-слоя</div>
-      <p>11 лет в анализе данных и ИИ. Делает руками ядро таких систем: ИИ-агенты на базе Claude, поиск по внутренней базе знаний, защита от некорректных ответов, поддержка русского языка. Вёл задачи от постановки до промышленного запуска.</p>
+      <div><span class="pn">Иван Черданцев</span> — <span class="pr">ведущий инженер ИИ-слоя</span></div>
+      <p>ИИ-агенты на Claude, поиск по базе знаний, русский язык.</p>
       <div class="companies"><span class="tag">Semrush</span><span class="tag">Playrix</span><span class="tag">VK</span></div>
     </div>
-
     <div class="person">
-      <div class="pn">Владислав Тумко</div>
-      <div class="pr">Обработка данных и оцифровка контекста</div>
-      <p>8+ лет промышленного ИИ. Строил системы автоматической расшифровки речи и генерации отчётов, обработку документов и видео — то, что переводит «неоцифрованный» контекст (совещания, документы) в данные для системы.</p>
+      <div><span class="pn">Владислав Тумко</span> — <span class="pr">данные и оцифровка контекста</span></div>
+      <p>Расшифровка речи, отчёты, обработка документов и видео.</p>
       <div class="companies"><span class="tag">Mars</span></div>
     </div>
   </section>
@@ -179,59 +156,55 @@
   <!-- 04 Этапы работ -->
   <section class="slide">
     <p class="num">04 · Этапы работ</p>
-    <h2>Заходим в два этапа</h2>
-    <p>Ниже — состав работ по каждому этапу: задача, образ результата, срок и стоимость. Оплата <strong>фиксированная за этап</strong>; разбивка показывает, из чего складывается сумма.</p>
+    <h2>Два этапа</h2>
+    <p>Оплата фиксированная за этап. Этапы оплачиваются раздельно.</p>
 
     <div class="stage-head">Этап 1 — Диагностика · ~2–3 недели · 390 000 ₽</div>
-    <p class="stage-note">Ставка на этом этапе — работа Евгения и технического директора (архитектура и постановка): <strong>15 000 ₽/ч</strong> (со скидкой от базовой 25 000 ₽/ч). Календарный срок растянут под занятость ваших сотрудников; в колонке — фактические часы, из которых складывается сумма.</p>
+    <p class="stage-note">Диагностика — по одному пилотному направлению (не по всей группе). Состав интервью (≈6 человек: ответственные направления + ключевые финансисты) выбираем вместе с фаундером. Ставка Евгения и технического директора — 15 000 ₽/ч.</p>
     <div class="tasks">
-      <div class="task"><div class="task-h"><span class="task-t">Интервью и разбор реальных процессов и документов (6–7 сотрудников)</span><span class="task-v">10 ч · 150 000 ₽</span></div><p class="task-x">Документ с описанием, как сейчас работают процессы и как собираются данные по ключевым направлениям в компании.</p></div>
-      <div class="task"><div class="task-h"><span class="task-t">Анализ оцифровки текущих данных и процессов</span><span class="task-v">3 ч · 45 000 ₽</span></div><p class="task-x">Документ с описанием, что необходимо сделать для оцифровки контекста в ключевых направлениях (финансы, задачи, совещания, коммуникация в команде и др.).</p></div>
-      <div class="task"><div class="task-h"><span class="task-t">Проектирование целевой архитектуры и модели данных</span><span class="task-v">8 ч · 120 000 ₽</span></div><p class="task-x">Архитектура решения под вас + единый стандарт данных (как привести показатели к виду для ИИ).</p></div>
-      <div class="task"><div class="task-h"><span class="task-t">Демо-решение на ваших данных + план и смета пилота</span><span class="task-v">5 ч · 75 000 ₽</span></div><p class="task-x">Рабочее демо ИИ-агента на ваших цифрах + готовая смета Этапа 2.</p></div>
+      <div class="task"><div class="task-h"><span class="task-t">Интервью и разбор процессов (6–7 сотрудников)</span><span class="task-v">10 ч · 150 000 ₽</span></div><p class="task-x">Как работают процессы и как собираются данные по направлениям.</p></div>
+      <div class="task"><div class="task-h"><span class="task-t">Анализ оцифровки данных и процессов</span><span class="task-v">3 ч · 45 000 ₽</span></div><p class="task-x">Что нужно оцифровать в ключевых направлениях.</p></div>
+      <div class="task"><div class="task-h"><span class="task-t">Архитектура и модель данных</span><span class="task-v">8 ч · 120 000 ₽</span></div><p class="task-x">Архитектура под вас + единый стандарт данных.</p></div>
+      <div class="task"><div class="task-h"><span class="task-t">Лёгкое демо на срезе ваших данных + смета пилота</span><span class="task-v">5 ч · 75 000 ₽</span></div><p class="task-x">Демо ИИ-агента на репрезентативном срезе (без полного подключения) + готовая смета Этапа 2.</p></div>
       <div class="task total"><div class="task-h"><span class="task-t">Итого</span><span class="task-v">26 ч · 390 000 ₽</span></div></div>
     </div>
+    <p class="disc">Допущения: глубокая работа с источниками (доступы, выгрузки, разбор «сырых» данных) относится к пилоту; в диагностике анализ оцифровки — верхнеуровневый. Если источники сильно разнородны — состав и смета уточняются до старта.</p>
 
     <div class="stage-head">Этап 2 — Пилот · ~8 недель · ~2.9M ₽</div>
-    <p class="stage-note">Стоимость складывается из двух ставок: инженерная разработка команды и архитектурный контроль со стороны Евгения и технического директора (15 000 ₽/ч). Оплата фиксированная за этап; часть задач идёт параллельно, поэтому календарный срок короче суммы сроков.</p>
     <div class="tasks">
-      <div class="task"><div class="task-h"><span class="task-t">Контур и инфраструктура</span><span class="task-v">~1 нед · ~250k ₽</span></div><p class="task-x">Защищённый сервер с разграничением прав доступа: владелец видит всё, руководитель — только своё направление.</p></div>
-      <div class="task"><div class="task-h"><span class="task-t">Внедрение инструментов оцифровки контекста</span><span class="task-v">~2 нед · ~650k ₽</span></div><p class="task-x">Ключевые потоки переведены в цифру: подключены почта, календари, чаты (Telegram); выбран и настроен инструмент записи совещаний. Контекст, которого раньше не было в системе, начинает собираться автоматически.</p></div>
-      <div class="task"><div class="task-h"><span class="task-t">Подключение источников данных</span><span class="task-v">~1.5 нед · ~350k ₽</span></div><p class="task-x">Ключевые источники подключены, данные собираются автоматически (не вручную).</p></div>
-      <div class="task"><div class="task-h"><span class="task-t">Стандартизация данных</span><span class="task-v">~1.5 нед · ~350k ₽</span></div><p class="task-x">Показатели сведены к одному формату — цифры сопоставимы между периодами и источниками.</p></div>
-      <div class="task"><div class="task-h"><span class="task-t">Обработка данных через ИИ-слой</span><span class="task-v">~2 нед · ~400k ₽</span></div><p class="task-x">Данные связаны в общую картину и обновляются сами.</p></div>
-      <div class="task"><div class="task-h"><span class="task-t">Интерфейсы: веб-приложение + чат-агент</span><span class="task-v">~2.5 нед · ~550k ₽</span></div><p class="task-x">Рабочий экран «состояние направления» и агент в Telegram.</p></div>
-      <div class="task"><div class="task-h"><span class="task-t">Калибровка на живых данных</span><span class="task-v">~2 нед · ~350k ₽</span></div><p class="task-x">Система выверена на ваших данных, точность подтверждена финансовой командой.</p></div>
+      <div class="task"><div class="task-h"><span class="task-t">Контур и инфраструктура</span><span class="task-v">~1 нед · ~250k ₽</span></div><p class="task-x">Защищённый сервер, права доступа по ролям.</p></div>
+      <div class="task"><div class="task-h"><span class="task-t">Внедрение инструментов оцифровки</span><span class="task-v">~2 нед · ~650k ₽</span></div><p class="task-x">Почта, календари, чаты, запись совещаний подключены; контекст собирается сам.</p></div>
+      <div class="task"><div class="task-h"><span class="task-t">Подключение источников данных</span><span class="task-v">~1.5 нед · ~350k ₽</span></div><p class="task-x">Ключевые источники подключены, сбор автоматический.</p></div>
+      <div class="task"><div class="task-h"><span class="task-t">Стандартизация данных</span><span class="task-v">~1.5 нед · ~350k ₽</span></div><p class="task-x">Показатели в одном формате, сопоставимы между периодами.</p></div>
+      <div class="task"><div class="task-h"><span class="task-t">Обработка через ИИ-слой</span><span class="task-v">~2 нед · ~400k ₽</span></div><p class="task-x">Данные связаны в общую картину и обновляются сами.</p></div>
+      <div class="task"><div class="task-h"><span class="task-t">Интерфейсы: веб + чат-агент</span><span class="task-v">~2.5 нед · ~550k ₽</span></div><p class="task-x">Экран «состояние направления» + агент в Telegram.</p></div>
+      <div class="task"><div class="task-h"><span class="task-t">Калибровка на живых данных</span><span class="task-v">~2 нед · ~350k ₽</span></div><p class="task-x">Выверено на ваших данных, подтверждено финансовой командой.</p></div>
       <div class="task total"><div class="task-h"><span class="task-t">Итого работ</span><span class="task-v">~8 нед · ~2 900 000 ₽</span></div></div>
-      <div class="task"><div class="task-h"><span class="task-t">Инфраструктура и токены</span><span class="task-v">~$1–1.5k/мес</span></div><p class="task-x">Работающий защищённый контур на весь срок (оплата по факту, сверх сметы).</p></div>
+      <div class="task"><div class="task-h"><span class="task-t">Инфраструктура и токены</span><span class="task-v">~$1–1.5k/мес</span></div><p class="task-x">Защищённый контур на весь срок (оплата по факту, сверх сметы).</p></div>
     </div>
-
-    <p class="note">Этапы оплачиваются раздельно: диагностика — 390 000 ₽, пилот — ~2.9M ₽. Диагностика — самостоятельный этап: её результаты (архитектура, стандарт данных, демо, смета) остаются у вас и позволяют принять решение о пилоте на фактах.</p>
-    <p class="disc">Суммы по пилоту предварительные: точный состав и цифры уточняются по итогу Этапа 1.</p>
-    <p class="note" style="margin-top:14px"><strong>Итог пилота:</strong> рабочая первая версия, которой владелец пользуется ежедневно — открыл экран (или написал ИИ-агенту), за секунды увидел состояние направления, спросил «почему просела маржа в июне?» и получил ответ со ссылкой на источник; финансовая команда уходит от ручного сведения к анализу. Проверенная на ваших данных ценность → обоснованное решение о раскатке на всю группу.</p>
+    <p class="note"><strong>Итог пилота:</strong> рабочая версия, которой владелец пользуется ежедневно — открыл экран или написал ИИ-агенту, за секунды увидел состояние направления и получил ответ со ссылкой на источник. Финансовая команда уходит от ручного сведения к анализу.</p>
   </section>
 
-  <!-- 05 Что нужно от вас -->
+  <!-- 05 Порядок запуска -->
   <section class="slide">
-    <p class="num">05 · Что нужно от вас</p>
-    <h2>Ресурсы для старта</h2>
-    <ul>
-      <li>Обеспечить доступ команды для интервью и доступ к данным (финансовые таблицы, 1С/Битрикс, выписки).</li>
-      <li>Назначить ответственного на вашей стороне.</li>
-    </ul>
-  </section>
-
-  <!-- 06 Порядок запуска -->
-  <section class="slide">
-    <p class="num">06 · Порядок запуска</p>
+    <p class="num">05 · Порядок запуска</p>
     <h2>Как стартуем</h2>
     <ol class="ol">
-      <li>Согласуем условия: пилотное направление, объём, сроки и стоимость.</li>
+      <li>Согласуем условия: направление, объём, сроки, стоимость.</li>
       <li>Подписываем NDA и договор на диагностику.</li>
-      <li>Проводим интервью с командой и разбор процессов (Этап 1).</li>
-      <li>По итогу Этапа 1 (демо на ваших данных + смета пилота) — вы принимаете решение о запуске пилота.</li>
+      <li>Интервью и разбор процессов (Этап 1).</li>
+      <li>По итогу Этапа 1 — вы принимаете решение о пилоте.</li>
     </ol>
-    <p class="note" style="border-color:var(--accent)">Начинаем с одного направления, замеряем ценность на ваших данных — и только потом решение о раскатке на всю группу.</p>
+  </section>
+
+  <!-- 06 Что нужно от вас -->
+  <section class="slide">
+    <p class="num">06 · Что нужно от вас</p>
+    <h2>Ресурсы для старта</h2>
+    <ul>
+      <li>Доступ команды для интервью и к данным (1С/Битрикс, финансовые таблицы, выписки).</li>
+      <li>Один ответственный менеджер на вашей стороне.</li>
+    </ul>
   </section>
 
   <div class="foot">Company Brain × SOL-GROUP · конфиденциальное предложение</div>

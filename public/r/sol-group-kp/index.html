@@ -62,11 +62,14 @@
   .stage-head{font-family:var(--mono); font-size:12.5px; color:var(--accent-ink); font-weight:700; letter-spacing:.03em; margin:20px 0 4px}
   /* pricing tables */
   .tbl-wrap{overflow-x:auto; margin:10px 0 6px; -webkit-overflow-scrolling:touch; border-radius:12px; border:1px solid var(--line)}
-  .ptable{width:100%; border-collapse:collapse; font-size:13.5px; min-width:660px; background:var(--bg)}
-  .ptable th,.ptable td{border-bottom:1px solid var(--line); padding:10px 13px; text-align:left; vertical-align:top; color:var(--muted)}
-  .ptable th{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--accent-ink); font-weight:700; white-space:nowrap}
-  .ptable td:first-child{font-weight:700; color:var(--ink); white-space:nowrap}
-  @media(max-width:620px){.ptable td:first-child{white-space:normal}}
+  .ptable{width:100%; border-collapse:collapse; font-size:13.5px; min-width:560px; background:var(--bg); table-layout:fixed}
+  .ptable th,.ptable td{border-bottom:1px solid var(--line); padding:10px 13px; text-align:left; vertical-align:top; color:var(--muted); word-wrap:break-word; overflow-wrap:break-word}
+  .ptable th{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--accent-ink); font-weight:700}
+  .ptable td:first-child{font-weight:700; color:var(--ink)}
+  .ptable th:nth-child(1),.ptable td:nth-child(1){width:21%}
+  .ptable th:nth-child(2),.ptable td:nth-child(2){width:27%}
+  .ptable th:nth-child(3),.ptable td:nth-child(3){width:37%}
+  .ptable th:nth-child(4),.ptable td:nth-child(4){width:15%}
   .ptable .c-cost{font-family:var(--mono); font-weight:700; color:var(--accent-ink); white-space:nowrap; text-align:right}
   .ptable tr:last-child td{border-bottom:none}
   .ptable tr.total td{background:var(--accent-soft); font-weight:800; color:var(--ink)}

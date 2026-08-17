@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Гарри Тан: новые правила для основателей — разбор интервью</title>
+<style>
+  @font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('/fonts/manrope-var.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215}
+  @font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('/fonts/manrope-cyr.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+  @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:100 800;font-display:swap;src:url('/fonts/jetbrains-var.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2074,U+20AC,U+2122,U+2212}
+  :root{
+    --bg:#F5F5F4; --panel:#FFFFFF; --ink:#1C1917; --muted:#57534E; --faint:#A8A29E;
+    --line:rgba(28,25,23,.12); --line-strong:rgba(28,25,23,.22);
+    --accent:#FF4D14; --accent-soft:rgba(255,77,20,.10); --accent-ink:#B23A0F;
+    --pos:#B23A0F; --pos-soft:rgba(255,77,20,.10);
+    --amber:#57534E; --amber-soft:rgba(28,25,23,.05);
+    --graph:#A8A29E;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --maxw:74ch;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#1C1917; --panel:#292524; --ink:#FAFAF9;
+      --muted:rgba(250,250,249,.72); --faint:#8A827C; --line:rgba(255,255,255,.15); --line-strong:rgba(255,255,255,.24);
+      --accent:#FF6A3D; --accent-soft:rgba(255,106,61,.16); --accent-ink:#FF8A5C;
+      --pos:#FF8A5C; --pos-soft:rgba(255,106,61,.16); --amber:#D6D3D1; --amber-soft:rgba(255,255,255,.07);
+      --graph:#57534E;
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#F5F5F4; --panel:#FFFFFF; --ink:#1C1917; --muted:#57534E; --faint:#A8A29E;
+    --line:rgba(28,25,23,.12); --line-strong:rgba(28,25,23,.22); --accent:#FF4D14; --accent-soft:rgba(255,77,20,.10);
+    --accent-ink:#B23A0F; --pos:#B23A0F; --pos-soft:rgba(255,77,20,.10); --amber:#57534E;
+    --amber-soft:rgba(28,25,23,.05); --graph:#A8A29E;
+  }
+  :root[data-theme="dark"]{
+    --bg:#1C1917; --panel:#292524; --ink:#FAFAF9; --muted:rgba(250,250,249,.72); --faint:#8A827C;
+    --line:rgba(255,255,255,.15); --line-strong:rgba(255,255,255,.24); --accent:#FF6A3D; --accent-soft:rgba(255,106,61,.16);
+    --accent-ink:#FF8A5C; --pos:#FF8A5C; --pos-soft:rgba(255,106,61,.16); --amber:#D6D3D1;
+    --amber-soft:rgba(255,255,255,.07); --graph:#57534E;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Manrope',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:17px; line-height:1.62; letter-spacing:-0.003em;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px}
+  .prose{max-width:var(--maxw)}
+  h1,h2,h3{text-wrap:balance; line-height:1.15; letter-spacing:-0.02em; font-weight:680}
+  a{color:var(--accent); text-underline-offset:3px}
+  .eyebrow{font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* Hero */
+  header.hero{position:relative; overflow:hidden; border-bottom:1px solid var(--line)}
+  #graph{position:absolute; inset:0; width:100%; height:100%; opacity:.5; z-index:0}
+  .hero-in{position:relative; z-index:1; padding-top:72px; padding-bottom:48px}
+  @media(max-width:640px){ .hero-in{padding-top:48px; padding-bottom:36px} }
+  .hero h1{font-size:clamp(30px,5.2vw,52px); margin:14px 0 0}
+  .hero .thesis{max-width:60ch; font-size:clamp(17px,2.2vw,21px); color:var(--muted); margin:18px 0 0; line-height:1.5}
+  .hero .meta{margin-top:26px; font-size:13px; color:var(--faint); display:flex; gap:18px; flex-wrap:wrap}
+
+  section{padding:52px 0; border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(22px,3.2vw,30px); margin:0 0 6px}
+  .lead{color:var(--muted); max-width:var(--maxw); margin:0 0 26px}
+  p{margin:0 0 16px}
+  .prose p, .prose li{max-width:var(--maxw)}
+  ul{padding-left:1.1em; margin:0 0 16px}
+  li{margin:.3em 0}
+  strong{font-weight:680}
+
+  /* Stat tiles */
+  .stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:16px; margin:6px 0 8px}
+  .stat{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px}
+  .stat .k{font-size:clamp(26px,4vw,34px); font-weight:720; letter-spacing:-.02em; color:var(--ink)}
+  .stat .k small{font-size:.5em; font-weight:640; color:var(--muted); letter-spacing:0}
+  .stat .l{font-size:13px; color:var(--muted); margin-top:6px; line-height:1.4}
+
+  /* Cards / groups */
+  .group{background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:22px 22px 6px; margin:0 0 18px}
+  .group > .ghead{display:flex; align-items:baseline; gap:10px; margin:0 0 4px}
+  .group .tag{font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent-ink); background:var(--accent-soft); padding:3px 9px; border-radius:999px}
+  .group h3{font-size:18px; margin:0}
+  .players{list-style:none; padding:0; margin:12px 0 14px}
+  .players li{padding:12px 0; border-top:1px solid var(--line); display:grid; grid-template-columns:150px 1fr; gap:16px}
+  .players li:first-child{border-top:0}
+  .players .name{font-weight:680; color:var(--ink)}
+  .players .name .st{display:block; font-size:12px; font-weight:600; color:var(--faint); margin-top:3px}
+  .players .desc{color:var(--muted); font-size:15px; line-height:1.5}
+  .players .desc b{color:var(--ink); font-weight:660}
+
+  /* Table */
+  .tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:14px; background:var(--panel)}
+  table{border-collapse:collapse; width:100%; min-width:560px; font-size:15px}
+  th,td{text-align:left; padding:13px 16px; vertical-align:top; border-top:1px solid var(--line)}
+  thead th{border-top:0; font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:var(--faint); font-weight:700; background:transparent}
+  tbody tr td:first-child{font-weight:640; color:var(--ink)}
+  td .who{color:var(--faint); font-size:13px}
+
+  /* Funding rows */
+  .fund{display:grid; grid-template-columns:1fr; gap:0}
+  .frow{display:grid; grid-template-columns:130px 1fr auto; gap:16px; align-items:center; padding:14px 0; border-top:1px solid var(--line)}
+  .frow:first-child{border-top:0}
+  .frow .co{font-weight:680}
+  .frow .note{color:var(--muted); font-size:14px}
+  .frow .fig{font-variant-numeric:tabular-nums; font-weight:680; text-align:right; white-space:nowrap}
+  .chip{display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:999px; letter-spacing:.03em; vertical-align:middle}
+  .chip.pos{color:var(--pos); background:var(--pos-soft)}
+  .chip.amb{color:var(--amber); background:var(--amber-soft)}
+
+  /* Whitespace list */
+  .ws{list-style:none; padding:0; margin:0; counter-reset:w}
+  .ws li{counter-increment:w; position:relative; padding:18px 0 18px 52px; border-top:1px solid var(--line)}
+  .ws li:first-child{border-top:0}
+  .ws li::before{content:counter(w); position:absolute; left:0; top:16px; width:34px; height:34px;
+    display:grid; place-items:center; border-radius:10px; background:var(--accent-soft); color:var(--accent-ink);
+    font-weight:720; font-size:15px; font-variant-numeric:tabular-nums}
+  .ws b{color:var(--ink)}
+  .ws .d{color:var(--muted); font-size:15px; margin-top:3px}
+
+  /* Pullquote */
+  blockquote{margin:0; padding:26px 28px; background:var(--accent-soft); border-radius:16px;
+    color:var(--accent-ink); font-size:clamp(18px,2.6vw,22px); line-height:1.45; font-weight:560; letter-spacing:-.01em}
+  blockquote .src{display:block; font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px; color:var(--accent)}
+
+  .caveat{font-size:14px; color:var(--muted); background:var(--panel); border:1px dashed var(--line-strong); border-radius:12px; padding:16px 18px}
+  .sources{font-size:14px; color:var(--muted); columns:2; column-gap:32px}
+  .sources p{break-inside:avoid; margin:0 0 10px}
+  @media(max-width:640px){ .sources{columns:1} .players li{grid-template-columns:1fr; gap:4px} .frow{grid-template-columns:1fr auto} .frow .note{grid-column:1/-1} }
+  footer{padding:40px 0 64px; color:var(--faint); font-size:13px}
+  /* --- shilnikov.ai design language: mono for data, brand-orange accent, tighter radii --- */
+  .eyebrow{color:var(--accent)}
+  .stat .k, .stat .k small, .frow .fig, .tnum, .players .st, td .who, .who{font-family:var(--mono); letter-spacing:-.01em}
+  .chip{border:1px solid var(--line); font-family:var(--mono); font-weight:600}
+  .group,.stat,.tablewrap,blockquote,.caveat{border-radius:12px}
+  .ws li::before{font-family:var(--mono)}
+  h1,h2,h3{letter-spacing:-0.021em}
+  @media (prefers-reduced-motion:reduce){ #graph{opacity:.32} }
+</style>
+</head><body>
+
+<header class="hero">
+  <canvas id="graph" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <p class="eyebrow">Разбор первоисточника · YC · август 2026</p>
+    <h1>Гарри Тан: новые правила для основателей</h1>
+    <p class="thesis">Президент Y Combinator — про ошибку на четыре миллиарда, конец SaaS с оплатой за место, markdown-файл как сотрудника и про то, почему настоящее узкое место не интеллект моделей, а бюрократия.</p>
+    <div class="meta"><span>Источник: подкаст a16z</span><span>·</span><span>Разбор по полной расшифровке, 10 500 слов</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <p class="eyebrow">Источник</p>
+    <h2>Что это и откуда</h2>
+    <p class="lead">Разбор сделан по полной расшифровке интервью, а не по пересказам. Гарри Тан — президент и CEO Y Combinator; собеседник — Аниш Ачарья, партнёр a16z.</p>
+    <div class="prose">
+      <p>Интервью: <a href="https://www.youtube.com/watch?v=fsTtKywmWlU">Garry Tan: New Rules for Founders</a>, подкаст a16z, август 2026. Расшифровка — 10 500 слов.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Ошибка ценой в компанию</p>
+    <h2>Территория важнее карты</h2>
+    <p class="lead">Тан дважды совершил одну и ту же ошибку и считает её главной в карьере.</p>
+    <div class="prose">
+      <p><strong>2003.</strong> Ушёл из веб-программирования ровно тогда, когда стоило остаться: «люди говорили, что веб мёртв, а это был идеальный момент работать над вебом и социальными сервисами». Ушёл в Windows Mobile, потому что это выглядело следующей модной вещью. Facebook тогда ещё не существовал.</p>
+      <p><strong>Palantir.</strong> Джо Лонсдейл и Стивен Коэн, его братья по студенческому братству в Стэнфорде, звали его в самом начале. Питер Тиль выписал чек на 70 тысяч долларов — ровно столько Тан зарабатывал в Microsoft. Ответ: «Спасибо, мистер Тиль, но в этом году меня могут повысить до уровня 60». Повысили.</p>
+    </div>
+    <blockquote>
+      <span class="src">Гарри Тан</span>
+      Это была ошибка на два-четыре миллиарда долларов. Я думаю о ней постоянно.
+    </blockquote>
+    <div class="prose">
+      <p>Объяснение обеих ошибок одно: он работал от карты, а не от территории — смотрел, что скажет хороший инвестор и что пишут в деловой прессе, вместо того чтобы опираться на прямой опыт. Вопрос «что сейчас горячо и над чем работать» он называет неправильным. Правильный: «что тебе интересно и что ты знаешь уникального».</p>
+      <p>Отсюда его лозунг со Startup School — <strong>don't LARP</strong>, не изображай. С уточнением: искренность здесь не наивность, а следствие зрелости и смелости — способности сказать «я не согласен, потому что верю собственному опыту».</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Что изменилось в устройстве компаний</p>
+    <h2>Соло-основатель стал жизнеспособен, а SaaS за место — нет</h2>
+    <div class="prose">
+      <p>Раньше YC жёстко верил в необходимость сооснователей. Тан объясняет это через ролик Дерека Сиверса: один человек, танцующий в поле, — сумасшедший; всё начинается со второго, кто встал и присоединился.</p>
+      <p>Что изменилось: с агентным программированием «любой человек может стать четырьмя сотнями себя». Не «сделать больше», а буквально размножиться.</p>
+    </div>
+    <blockquote>
+      <span class="src">Про модель подписки</span>
+      Чистый SaaS с оплатой за место — совсем не очевидно, что он вообще будет существовать через 5–10 лет. Как клин это нормально, но если вы делаете это в 2026-м, надейтесь, что это прыжок к какому-то рву — данным, сетевым эффектам, чему-то ещё.
+    </blockquote>
+    <div class="prose">
+      <p>Резкость сдвига он подчёркивает отдельно: ещё два года назад мультипликатор 10–20 годовых выручек был «железным законом», а сейчас это неправда.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Практика</p>
+    <h2>Живи в 2028: токен-максимизация</h2>
+    <p class="lead">Самая практичная часть интервью, почти не попавшая в пересказы.</p>
+    <div class="prose">
+      <p>Фронтир-лаборатории ограничивают объём вычислений, который дают через обычные интерфейсы. Чтобы получить максимум, нужны инструменты, где настройки в руках пользователя и можно грузить 800 тысяч — миллион токенов в каждый запрос.</p>
+    </div>
+    <blockquote>
+      <span class="src">Гарри Тан</span>
+      Это стоит 50 или 100 тысяч долларов в год — использовать агентов на полной мощности, полные 150 IQ на каждый запрос. Но вы почувствуете разницу практически сразу. Для CEO или основателя это имеет большой смысл. Нужно разрешить себе так тратить токены.
+    </blockquote>
+    <div class="prose">
+      <p>Формулировка результата: «ты получаешь возможность жить в 2028 году сегодня».</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Механика</p>
+    <h2>Markdown-файл — это сотрудник</h2>
+    <div class="prose">
+      <p>Цикл, который он описывает пошагово: сделал трудный приём один раз и хорошо → превратил в markdown-файл плюс код плюс тесты → поставил на расписание.</p>
+    </div>
+    <blockquote>
+      <span class="src">Про скилл-файлы</span>
+      Markdown-файл — это сотрудник. Причём сотрудник, который сделает работу идеально каждый раз и столько раз, сколько нужно.
+    </blockquote>
+    <div class="prose">
+      <p>Честность про цену входа: первый раз получится плохо и дорого, потребуется много итераций. Но дальше исправления не теряются — след работы с агентом превращается в скилл-файл, и любая будущая ошибка становится разовым исправлением, «а потом это там навсегда». Применяется ко всему: продажи, маркетинг, поддержка, инженерия.</p>
+      <p><strong>Его собственный пример.</strong> Тан начал записывать все свои офис-часы с основателями, накопил несколько месяцев данных, вытащил приёмы, которыми партнёры YC поднимают амбицию основателя, и собрал markdown-файл — «идеальный скрипт, как консультировать основателей». Перед публикацией попросил модель: «ослабь силу и интенсивность этого промпта на 90%».</p>
+    </div>
+    <blockquote>
+      <span class="src">Про масштаб результата</span>
+      Сегодня есть компании, где буквально можно пройти путь от нуля до 15 миллионов годовой выручки примерно за четыре месяца силами двух-трёх человек и пары сотен скилл-файлов.
+    </blockquote>
+    <div class="prose">
+      <p><strong>Что ломается при масштабе.</strong> На прямой вопрос, накапливаются ли ошибки, Тан отвечает: когда файлов и данных становится много, начинает решать происхождение фактов. Нужен механизм разрешения противоречий — при конфликте побеждает более свежий факт — и фоновый процесс, который регулярно проверяет, что данные точны и из правильных источников.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Кейс</p>
+    <h2>Ясновидение руководителя: как это устроено в Brex</h2>
+    <p class="lead">Самый конкретный пример в интервью — Педро из Brex, компании в жёстко зарегулированной финтех-отрасли.</p>
+    <div class="prose">
+      <p>Порядок шагов у него был такой:</p>
+      <p>1. Сначала построил открытый слой наблюдения, который следит за всем сетевым трафиком и действиями агента. Так снялся вопрос безопасности — в регулируемой отрасли иначе нельзя.</p>
+      <p>2. Дальше агент читает транскрипты встреч всех его прямых подчинённых. Руководитель видит на два уровня вниз.</p>
+      <p>3. Агент показывает, что сломано и кто с кем в конфликте — по встречам, на которых руководителя не было.</p>
+      <p>4. Итог: он приходит на встречу с полным контекстом за последние три недели, говорит «вы правы, делаем по-вашему», и уходит.</p>
+      <p>Комментарий Тана: одна из главных причин, почему компании умирают, — бизнес перестаёт помещаться в одну голову. Человек держит семь плюс-минус два объекта. Человек с агентом — «примерно три книги про Гарри Поттера».</p>
+    </div>
+    <blockquote>
+      <span class="src">Следствие</span>
+      Как только это есть у тебя в голове, любой бизнес в мире доступен для того, чтобы забрать его.
+    </blockquote>
+  </section>
+
+  <section>
+    <p class="eyebrow">Организация</p>
+    <h2>Средний слой менеджмента должен быть агентами</h2>
+    <div class="prose">
+      <p>Направление задаёт руководство, исполнение решает конкретный человек, а организационный слой посередине — то, чем исторически занимались проектные менеджеры, — не обязан быть человеческим.</p>
+      <p>К этому Тан добавляет мысль про <strong>API-линию</strong> Венкатеша Рао: нужно быть «над линией», иначе ты исполнитель чужих команд. AI эту линию стирает. Пример — профинансированная YC компания выпустила приём баг-репортов не для людей, а для агентов: агент сообщает об ошибке и получает ответ в реальном времени — «хороший баг, зарегистрировали, починим на следующей неделе, а пока попробуй такой обход».</p>
+      <p>Историческая аналогия, которую он приводит, — производственная система Toyota: тот, кто стоит на линии, должен иметь право менять линию, потому что у него больше всего контекста. Именно это, по его словам, сделало японские машины 80-х и подкосило американские.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Неожиданный разворот</p>
+    <h2>Узкое место — не интеллект моделей, а бюрократия</h2>
+    <div class="prose">
+      <p>На вопрос, сколько задач упирается в то, что нужны более умные модели, ответ короткий: «Честно — всё упирается в людей. Именно люди будут это замедлять».</p>
+      <p>И дальше он разворачивает это в хорошую новость. Весь разговор об AI идёт в тоне «все офисные работы исчезнут, будет вечный низший класс». Тан считает, что бюрократия, медлительность и ограничение «семь плюс-минус два» в каждой компании, институте и правительстве — как раз то, что даёт запас времени.</p>
+    </div>
+    <blockquote>
+      <span class="src">Гарри Тан</span>
+      Общество медленнее, чем вы думаете. Государство медленнее, чем вы думаете. Любая компания в мире медленнее, чем вы думаете.
+    </blockquote>
+    <div class="prose">
+      <p>Оценка горизонта — двадцать лет, и это, по его словам, хорошо. Отсюда же признание, идущее вразрез с обычной риторикой Кремниевой долины: у крупных корпораций есть структурные рвы, и стартапы их не заменят.</p>
+      <p>Личная иллюстрация: в 22 года в Microsoft ему с наставником нужно было исправление от команды Windows, которая не отвечала на письма и даже не помечала ошибку как «не будем чинить». Пошли туда физически — с бейсбольной битой, просто как смутная угроза. Семь уровней иерархии между двумя толковыми людьми и блокирующей ошибкой, задевавшей тысячу пользователей.</p>
+    </div>
+    <blockquote>
+      <span class="src">Вывод</span>
+      Организация вроде Microsoft так не может. А стартап может. И каждый стартап обязан.
+    </blockquote>
+  </section>
+
+  <section style="border-bottom:0">
+    <p class="eyebrow">Что дальше</p>
+    <h2>Прогнозы из интервью</h2>
+    <div class="prose">
+      <p><strong>Следующий компьютер</strong> — голос, много памяти, много контекста. «Все сейчас довольны существующими ассистентами, но в долгую — нет».</p>
+      <p><strong>2027-й — «войны обвязок».</strong> Сейчас всё упирается в цену: фронтир-мощность сегодняшнего дня будет стоить 50–100 долларов через два-три года, и тогда начнётся борьба за миллиард потребителей.</p>
+      <p><strong>Преимущество основателей 35–45 лет:</strong> они уже знают, что строить. «А если таких людей вдруг четыреста, можно переиграть целый департамент любой из крупнейших технологических компаний».</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">shilnikov.ai · страница без индексации, только по ссылке</footer>
+</body></html>

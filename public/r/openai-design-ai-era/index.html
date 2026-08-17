@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Иан Силбер (OpenAI): дизайн в эпоху AI — разбор интервью</title>
+<style>
+  @font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('/fonts/manrope-var.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215}
+  @font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('/fonts/manrope-cyr.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+  @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:100 800;font-display:swap;src:url('/fonts/jetbrains-var.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2074,U+20AC,U+2122,U+2212}
+  :root{
+    --bg:#F5F5F4; --panel:#FFFFFF; --ink:#1C1917; --muted:#57534E; --faint:#A8A29E;
+    --line:rgba(28,25,23,.12); --line-strong:rgba(28,25,23,.22);
+    --accent:#FF4D14; --accent-soft:rgba(255,77,20,.10); --accent-ink:#B23A0F;
+    --pos:#B23A0F; --pos-soft:rgba(255,77,20,.10);
+    --amber:#57534E; --amber-soft:rgba(28,25,23,.05);
+    --graph:#A8A29E;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --maxw:74ch;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#1C1917; --panel:#292524; --ink:#FAFAF9;
+      --muted:rgba(250,250,249,.72); --faint:#8A827C; --line:rgba(255,255,255,.15); --line-strong:rgba(255,255,255,.24);
+      --accent:#FF6A3D; --accent-soft:rgba(255,106,61,.16); --accent-ink:#FF8A5C;
+      --pos:#FF8A5C; --pos-soft:rgba(255,106,61,.16); --amber:#D6D3D1; --amber-soft:rgba(255,255,255,.07);
+      --graph:#57534E;
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#F5F5F4; --panel:#FFFFFF; --ink:#1C1917; --muted:#57534E; --faint:#A8A29E;
+    --line:rgba(28,25,23,.12); --line-strong:rgba(28,25,23,.22); --accent:#FF4D14; --accent-soft:rgba(255,77,20,.10);
+    --accent-ink:#B23A0F; --pos:#B23A0F; --pos-soft:rgba(255,77,20,.10); --amber:#57534E;
+    --amber-soft:rgba(28,25,23,.05); --graph:#A8A29E;
+  }
+  :root[data-theme="dark"]{
+    --bg:#1C1917; --panel:#292524; --ink:#FAFAF9; --muted:rgba(250,250,249,.72); --faint:#8A827C;
+    --line:rgba(255,255,255,.15); --line-strong:rgba(255,255,255,.24); --accent:#FF6A3D; --accent-soft:rgba(255,106,61,.16);
+    --accent-ink:#FF8A5C; --pos:#FF8A5C; --pos-soft:rgba(255,106,61,.16); --amber:#D6D3D1;
+    --amber-soft:rgba(255,255,255,.07); --graph:#57534E;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Manrope',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:17px; line-height:1.62; letter-spacing:-0.003em;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px}
+  .prose{max-width:var(--maxw)}
+  h1,h2,h3{text-wrap:balance; line-height:1.15; letter-spacing:-0.02em; font-weight:680}
+  a{color:var(--accent); text-underline-offset:3px}
+  .eyebrow{font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* Hero */
+  header.hero{position:relative; overflow:hidden; border-bottom:1px solid var(--line)}
+  #graph{position:absolute; inset:0; width:100%; height:100%; opacity:.5; z-index:0}
+  .hero-in{position:relative; z-index:1; padding-top:72px; padding-bottom:48px}
+  @media(max-width:640px){ .hero-in{padding-top:48px; padding-bottom:36px} }
+  .hero h1{font-size:clamp(30px,5.2vw,52px); margin:14px 0 0}
+  .hero .thesis{max-width:60ch; font-size:clamp(17px,2.2vw,21px); color:var(--muted); margin:18px 0 0; line-height:1.5}
+  .hero .meta{margin-top:26px; font-size:13px; color:var(--faint); display:flex; gap:18px; flex-wrap:wrap}
+
+  section{padding:52px 0; border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(22px,3.2vw,30px); margin:0 0 6px}
+  .lead{color:var(--muted); max-width:var(--maxw); margin:0 0 26px}
+  p{margin:0 0 16px}
+  .prose p, .prose li{max-width:var(--maxw)}
+  ul{padding-left:1.1em; margin:0 0 16px}
+  li{margin:.3em 0}
+  strong{font-weight:680}
+
+  /* Stat tiles */
+  .stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:16px; margin:6px 0 8px}
+  .stat{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px}
+  .stat .k{font-size:clamp(26px,4vw,34px); font-weight:720; letter-spacing:-.02em; color:var(--ink)}
+  .stat .k small{font-size:.5em; font-weight:640; color:var(--muted); letter-spacing:0}
+  .stat .l{font-size:13px; color:var(--muted); margin-top:6px; line-height:1.4}
+
+  /* Cards / groups */
+  .group{background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:22px 22px 6px; margin:0 0 18px}
+  .group > .ghead{display:flex; align-items:baseline; gap:10px; margin:0 0 4px}
+  .group .tag{font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent-ink); background:var(--accent-soft); padding:3px 9px; border-radius:999px}
+  .group h3{font-size:18px; margin:0}
+  .players{list-style:none; padding:0; margin:12px 0 14px}
+  .players li{padding:12px 0; border-top:1px solid var(--line); display:grid; grid-template-columns:150px 1fr; gap:16px}
+  .players li:first-child{border-top:0}
+  .players .name{font-weight:680; color:var(--ink)}
+  .players .name .st{display:block; font-size:12px; font-weight:600; color:var(--faint); margin-top:3px}
+  .players .desc{color:var(--muted); font-size:15px; line-height:1.5}
+  .players .desc b{color:var(--ink); font-weight:660}
+
+  /* Table */
+  .tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:14px; background:var(--panel)}
+  table{border-collapse:collapse; width:100%; min-width:560px; font-size:15px}
+  th,td{text-align:left; padding:13px 16px; vertical-align:top; border-top:1px solid var(--line)}
+  thead th{border-top:0; font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:var(--faint); font-weight:700; background:transparent}
+  tbody tr td:first-child{font-weight:640; color:var(--ink)}
+  td .who{color:var(--faint); font-size:13px}
+
+  /* Funding rows */
+  .fund{display:grid; grid-template-columns:1fr; gap:0}
+  .frow{display:grid; grid-template-columns:130px 1fr auto; gap:16px; align-items:center; padding:14px 0; border-top:1px solid var(--line)}
+  .frow:first-child{border-top:0}
+  .frow .co{font-weight:680}
+  .frow .note{color:var(--muted); font-size:14px}
+  .frow .fig{font-variant-numeric:tabular-nums; font-weight:680; text-align:right; white-space:nowrap}
+  .chip{display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:999px; letter-spacing:.03em; vertical-align:middle}
+  .chip.pos{color:var(--pos); background:var(--pos-soft)}
+  .chip.amb{color:var(--amber); background:var(--amber-soft)}
+
+  /* Whitespace list */
+  .ws{list-style:none; padding:0; margin:0; counter-reset:w}
+  .ws li{counter-increment:w; position:relative; padding:18px 0 18px 52px; border-top:1px solid var(--line)}
+  .ws li:first-child{border-top:0}
+  .ws li::before{content:counter(w); position:absolute; left:0; top:16px; width:34px; height:34px;
+    display:grid; place-items:center; border-radius:10px; background:var(--accent-soft); color:var(--accent-ink);
+    font-weight:720; font-size:15px; font-variant-numeric:tabular-nums}
+  .ws b{color:var(--ink)}
+  .ws .d{color:var(--muted); font-size:15px; margin-top:3px}
+
+  /* Pullquote */
+  blockquote{margin:0; padding:26px 28px; background:var(--accent-soft); border-radius:16px;
+    color:var(--accent-ink); font-size:clamp(18px,2.6vw,22px); line-height:1.45; font-weight:560; letter-spacing:-.01em}
+  blockquote .src{display:block; font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px; color:var(--accent)}
+
+  .caveat{font-size:14px; color:var(--muted); background:var(--panel); border:1px dashed var(--line-strong); border-radius:12px; padding:16px 18px}
+  .sources{font-size:14px; color:var(--muted); columns:2; column-gap:32px}
+  .sources p{break-inside:avoid; margin:0 0 10px}
+  @media(max-width:640px){ .sources{columns:1} .players li{grid-template-columns:1fr; gap:4px} .frow{grid-template-columns:1fr auto} .frow .note{grid-column:1/-1} }
+  footer{padding:40px 0 64px; color:var(--faint); font-size:13px}
+  /* --- shilnikov.ai design language: mono for data, brand-orange accent, tighter radii --- */
+  .eyebrow{color:var(--accent)}
+  .stat .k, .stat .k small, .frow .fig, .tnum, .players .st, td .who, .who{font-family:var(--mono); letter-spacing:-.01em}
+  .chip{border:1px solid var(--line); font-family:var(--mono); font-weight:600}
+  .group,.stat,.tablewrap,blockquote,.caveat{border-radius:12px}
+  .ws li::before{font-family:var(--mono)}
+  h1,h2,h3{letter-spacing:-0.021em}
+  @media (prefers-reduced-motion:reduce){ #graph{opacity:.32} }
+</style>
+</head><body>
+
+<header class="hero">
+  <canvas id="graph" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <p class="eyebrow">Разбор первоисточника · OpenAI · август 2026</p>
+    <h1>Иан Силбер: лучшее время в истории быть дизайнером</h1>
+    <p class="thesis">Руководитель продуктового дизайна OpenAI — про то, почему дизайнеры оказались самой несчастной профессией в индустрии, что остаётся людям, когда модель уже «отличный продуктовый дизайнер», и почему главный совет звучит как «просто делай меньше».</p>
+    <div class="meta"><span>Источник: Lenny's Podcast</span><span>·</span><span>Разбор по полной расшифровке, 13 900 слов</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <p class="eyebrow">Источник</p>
+    <h2>Что это и откуда</h2>
+    <p class="lead">Иан Силбер три года руководит продуктовым дизайном в OpenAI — ChatGPT, Codex и весь продуктовый опыт. До этого Artifact, до него восемь лет в Instagram, где работал в том числе над Reels. Ещё раньше — Groupon.</p>
+    <div class="prose">
+      <p>Выпуск: <a href="https://www.youtube.com/watch?v=BV0hy6NET-U">OpenAI's Head of Design: This is the best time in history to be a designer</a>, Lenny's Podcast, август 2026. Разбор по полной расшифровке — 13 900 слов.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">С чего начинается разговор</p>
+    <h2>Дизайнеры — самая несчастная профессия в индустрии</h2>
+    <p class="lead">Ленни несколько лет ведёт опрос настроений в технологической отрасли — по его словам, крупнейший в своём роде.</p>
+    <blockquote>
+      <span class="src">Результат опроса</span>
+      Дизайнеры и пользовательские исследователи — самые несчастные по каждому измерению. Самые перегруженные, самые тревожные, наименее оптимистичные, самые уставшие, и они реже всех готовы рекомендовать свою профессию входящим в индустрию.
+    </blockquote>
+    <div class="prose">
+      <p>При этом картина расколота пополам: примерно половина людей переживает лучший период карьеры, половина — тяжелейший. Самая сильная корреляция у довольных одна: они чувствуют себя усиленными новыми инструментами.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Диагноз</p>
+    <h2>Проблема не в замещении, а в неясности роли</h2>
+    <blockquote>
+      <span class="src">Иан Силбер</span>
+      Сейчас непонятно, чего ждут от дизайнера. Человек, классически обученный определённому способу работы, чувствует: боже, мне нужно всё поменять.
+    </blockquote>
+    <div class="prose">
+      <p>Механика разрыва между инженерами и дизайнерами:</p>
+      <p>«Инженеры увеличили производительность в 10, иногда в 100 раз, а наша дизайн-команда — нет. Потому что процесс дизайна по-прежнему требует времени. Всё ещё приходится пробовать кучу вариантов и выбрасывать их».</p>
+      <p>Ключевое уточнение: сжалась только генерация идей. Цикл обратной связи — показать людям, увидеть, что не работает, переделать — остался, плюс в крупной компании остаётся расход на согласование. У инженера с агентом задача стала почти бинарной: попросил — обычно получилось.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Почему всё-таки лучшее время</p>
+    <h2>Дефицит смещается к пониманию человека</h2>
+    <div class="prose">
+      <p><strong>Скорость обучения.</strong> Силбер учился дизайну подростком через просмотр исходного кода страниц. Сегодня от идеи до работающей версии — минуты.</p>
+      <p><strong>Что становится ценным.</strong> «Когда любой может сделать что угодно, продукты, которые действительно понимают своего пользователя и делают что-то приятное, станут одним из главных измерений, по которым люди оценивают продукт. А это и есть основная работа дизайнера».</p>
+      <p><strong>Соотношение в командах может перевернуться.</strong> Раньше в стартапе было условно один дизайнер на пятнадцать инженеров. Его знакомые, запускающие компанию сейчас, обсуждают обратное: два дизайнера и один очень сильный инженер, который следит за инженерной надёжностью.</p>
+      <p><strong>Никто не отстал.</strong> «Мы все на очень раннем этапе. Если вы начнёте буквально сегодня, у вас будет фора перед большинством».</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Прямой вопрос</p>
+    <h2>Станет ли AI хорошим продуктовым дизайнером</h2>
+    <blockquote>
+      <span class="src">Ответ</span>
+      Возможно, лучше сказать так: он уже отличный продуктовый дизайнер. Он действительно уже прекрасен.
+    </blockquote>
+    <div class="prose">
+      <p>С оговоркой: это не значит, что он лучший в визуальном дизайне, информационной иерархии, типографике или интерактивном дизайне.</p>
+      <p><strong>Где остаются люди</strong> — его список из трёх пунктов:</p>
+      <p>1. <strong>По-настоящему понимать, что людям нужно</strong> — человеческий цикл наблюдения за тем, как человек пользуется продуктом.</p>
+      <p>2. <strong>Изобретать новое.</strong> Аргумент про обучающие данные: под мультитач iPhone их не было, под Instagram с повсеместными телефонами не было, Snapchat вообще перевернул представление о том, как люди хотят общаться. Сейчас так же — нет прецедентов для того, как разговаривать голосом с моделью и как поручать агенту задачи.</p>
+      <p>3. <strong>Авторская позиция.</strong> «Кто-то это сделал, у кого-то был взгляд на это. Думаю, это будет выделяться всё сильнее».</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Найм</p>
+    <h2>Что он ищет в дизайнерах сейчас</h2>
+    <div class="prose">
+      <p><strong>Не требует опыта в AI</strong> — «это меняется слишком быстро». Требует высокого любопытства и готовности разбираться.</p>
+      <p><strong>Прототипирование</strong> — стало доступнее, поэтому заметно выделяет кандидатов.</p>
+      <p><strong>Авторская позиция</strong> и стратегическое мышление.</p>
+      <p><strong>Системное мышление</strong> — на первом месте по нарастанию важности. Логика: строятся не изолированные фичи, а примитивы, которые складываются друг с другом. В пример приводит ранний Notion с его блоками. Ведущий замечает, что это пятый подкаст подряд, где системное мышление называют главным растущим навыком.</p>
+      <p><strong>Разнородная команда.</strong> Он сознательно не ищет одного человека, закрывающего все клетки: нужны и универсалы, и сильные визуальные дизайнеры, и бренд-команда, и прототипировщики, и стратеги.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Метод</p>
+    <h2>«Просто делай меньше» и два режима работы</h2>
+    <blockquote>
+      <span class="src">Совет команде</span>
+      Просто делайте меньше. Не проектируйте это, если можно не проектировать. Может, уже есть система или компонент, поверх которого можно построить. А может, эта фича вообще не нужна.
+    </blockquote>
+    <div class="prose">
+      <p>В OpenAI работают не одним процессом, а двумя, и выбор между ними — само по себе решение.</p>
+      <p><strong>Режим одержимости.</strong> Для некоторых частей продукта: «пробуем сотню вариантов, выбрасываем девяносто девять, выпускаем один». Поле ввода меняется буквально каждый день.</p>
+      <p><strong>Режим публичной стройки.</strong> Крупные ставки и быстрое обучение на реакции. «Когда с этим осваиваешься, это приятно: пробуешь и мгновенно получаешь обратную связь и внутри, и снаружи».</p>
+      <p>Критерий выбора: усилие вкладывают в то, что будет долговечным и не изменится завтра из-за смены технологии. Всё остальное — идея в релиз за четыре часа. При этом он честно признаёт: «трудно понять, что именно долговечно».</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Масштаб</p>
+    <h2>Как совмещать миллиард пользователей и эксперименты</h2>
+    <p class="lead">Разброс аудитории Силбер называет беспрецедентным: от «помоги придумать рецепт на ужин» до «автоматизирую свою ферму в Японии».</p>
+    <div class="prose">
+      <p><strong>Capability overhang.</strong> Подавляющее большинство получает лишь малую долю ценности, которую продукт уже умеет давать. Это не считается провалом.</p>
+      <p>Для массы — предельно простой опыт. Передний край доступен тем, кому он нужен: отдельные приложения и режимы. Эксперимент идёт с теми, кому не всё равно, а в основной продукт вещь дистиллируется тогда, когда пользователю больше не надо думать про переключатель или режим.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Интерфейс</p>
+    <h2>Проблема пустого поля и куда идёт форма</h2>
+    <div class="prose">
+      <p>Критика чата как «облагороженного терминала» звучит постоянно. Ответ через мысль бывшего продуктового директора OpenAI Кевина Вайля: разговор — исторически лучший интерфейс, покрывающий широкий диапазон интеллекта, ведь люди так общаются между собой независимо от уровня.</p>
+      <p>Что уже сделано: помощь в выражении намерения — уточняющие вопросы, на которые можно ответить нажатием, вместо требования быть идеальным составителем запросов; ответ перестал быть просто текстом — появились блоки письма, которые правятся прямо в переписке, и отдельные инструменты под генерацию изображений.</p>
+      <p>Куда идёт: разные аффордансы под контекст — для дизайнера, для аналитика, для бытовых задач интерфейс может выглядеть по-разному. Долгосрочно — проактивность (подсказки на основе календаря и рабочих чатов), голос, долговечные рабочие сценарии вместо старта с нуля каждый раз и единый универсальный ввод, который сам решает, ответить быстро или уйти работать надолго.</p>
+    </div>
+  </section>
+
+  <section style="border-bottom:0">
+    <p class="eyebrow">Личное</p>
+    <h2>Провалы, синдром самозванца и последний совет</h2>
+    <div class="prose">
+      <p>Пришёл в OpenAI напуганным: «я пользовался этим, но не чувствовал, что действительно понимаю». Долго ощущал, что плохо справляется с ролью — пока не поговорил с теми, кто вёл большие дизайн-команды, и не обнаружил, что проблемы у всех одинаковые.</p>
+      <p>Упоминает пост Елены Верны «Stop the AI confidence theater» — про то, что люди публикуют бесконечные истории успеха с AI, хотя мало что из этого реально работает.</p>
+      <p><strong>Провал в резюме:</strong> работал над IGTV — «огромный провал». Потом Reels. Объяснение: «мы зашили неверные допущения и держались за пару ограничений, но быстро научились, изменили это и переделали». Вывод — важно не то, что ты однажды выпустил, а как реагируешь и чинишь дальше.</p>
+    </div>
+    <blockquote>
+      <span class="src">Последний совет</span>
+      Сфокусируйтесь на результате. В конце концов, мы здесь не для того, чтобы строить инструменты и процессы, не для того, чтобы токен-максить. Мы здесь, чтобы делать отличный софт, который люди любят.
+    </blockquote>
+    <div class="prose">
+      <p>Эту фразу стоит поставить рядом с <a href="/r/garry-tan-new-rules">разбором интервью Гарри Тана</a> из того же дня, где токен-максимизация — центральная рекомендация основателю. Два человека изнутри отрасли говорят противоположное по акценту: один про максимальную мощность инструментов как конкурентное преимущество, другой про то, что инструменты не должны становиться самоцелью.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">shilnikov.ai · страница без индексации, только по ссылке</footer>
+</body></html>

@@ -6,8 +6,8 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://shilnikov.ai",
   i18n: {
-    defaultLocale: "ru",
-    locales: ["ru", "en"],
+    defaultLocale: "en",
+    locales: ["en", "ru"],
     routing: {
       prefixDefaultLocale: false,
     },

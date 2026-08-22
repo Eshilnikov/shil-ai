@@ -8,18 +8,19 @@ export const SITE: Site = {
 };
 
 export const HOME: Metadata = {
-  TITLE: "Главная",
-  DESCRIPTION: "Group CPO в Дубае пишет о продукте, AI-агентах и личных системах",
+  TITLE: "Home",
+  DESCRIPTION:
+    "Eugene Shilnikov — product leader in payments and fintech, Dubai. Writing about product, AI agents and personal systems.",
 };
 
 export const BLOG: Metadata = {
-  TITLE: "Блог",
-  DESCRIPTION: "Заметки о продукте, AI-агентах и личных системах",
+  TITLE: "Blog",
+  DESCRIPTION: "Notes on product, AI agents and personal systems",
 };
 
 export const PROJECTS: Metadata = {
-  TITLE: "Проекты",
-  DESCRIPTION: "Личные проекты со ссылками на репозитории и демо",
+  TITLE: "Projects",
+  DESCRIPTION: "Personal projects with links to repositories and demos",
 };
 
 export const SOCIALS: Socials = [

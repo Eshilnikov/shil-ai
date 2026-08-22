@@ -1,13 +1,20 @@
-// UI strings keyed by locale. Default locale is "ru". Add new keys here, not in components.
+// UI strings keyed by locale. Default locale is "en" (22.08.2026: сайт читает международная аудитория). Add new keys here, not in components.
 export const languages = {
   ru: "Русский",
   en: "English",
 } as const;
 
-export const defaultLang = "ru";
+export const defaultLang = "en";
 
 export const ui = {
   ru: {
+    "meta.home.title": "Главная",
+    "meta.home.description":
+      "Евгений Шильников — продуктовый лидер в платежах и финтехе, Дубай. Пишу о продукте, AI-агентах и личных системах.",
+    "meta.blog.title": "Блог",
+    "meta.blog.description": "Заметки о продукте, AI-агентах и личных системах",
+    "meta.projects.title": "Проекты",
+    "meta.projects.description": "Личные проекты со ссылками на репозитории и демо",
     "nav.blog": "блог",
     "nav.projects": "проекты",
     "footer.copyright": "© 2026",
@@ -24,27 +31,23 @@ export const ui = {
     "projects.empty":
       "Пока ничего не опубликовано — открытый код и кейсы появятся здесь.",
     "home.h1":
-      "Привет, меня зовут Женя Шильников. Я разбираю на своих кейсах, как AI меняет работу и жизнь.",
+      "Привет, я Женя Шильников. Делаю продукты в платежах и финтехе — и каждый день применяю ИИ в работе и в быту.",
     "home.intro1.part1":
-      "Строю финтех для малого бизнеса в ОАЭ и России. Начинал со своего стартапа — запустил сервис онлайн-записи для предпринимателей и продал его Яндексу. Внутри Яндекса развивал сервисы для бизнеса в Картах, дальше возглавлял продукт ",
+      "Пятнадцать лет в продукте, последние два — в Дубае. Свой первый стартап, сервис онлайн-записи для малого бизнеса, продал Яндексу. В ",
     "home.intro1.link1.label": "Яндекс Пэй",
     "home.intro1.link1.href": "https://pay.yandex.ru/",
-    "home.intro1.part2": " и запускал в ОАЭ ",
+    "home.intro1.part2": " запустил платёжный кошелёк и банковское приложение, в ОАЭ поднял ",
     "home.intro1.link2.label": "Yango Maps",
     "home.intro1.link2.href": "https://maps.yango.com/en-ae/",
     "home.intro1.part3":
-      " — международную версию Яндекс Карт. Сейчас руковожу продуктами в ",
+      " — карты и навигацию. Сейчас отвечаю за продукты ",
     "home.intro1.link3.label": "Fortis",
     "home.intro1.link3.href": "https://www.wefortis.com/",
     "home.intro1.part4": " и ",
     "home.intro1.link4.label": "LifePay",
     "home.intro1.link4.href": "https://life-pay.ru/",
-    "home.intro1.part5": ".",
-    "home.intro2.part1": "Что внедряю в работе и в жизни — описываю в ",
-    "home.intro2.link.label": "Telegram-канале",
-    "home.intro2.link.href": "https://t.me/shilnikov_ai",
-    "home.intro2.part2":
-      ". Здесь, на сайте, — выводы и готовые решения.",
+    "home.intro1.part5": ": платежи и касса для малого бизнеса.",
+    "home.intro2": "Здесь пишу о том, что делаю с ИИ на практике: какие задачи он снимает в работе и дома, что действительно работает, а что нет.",
     "home.latest_posts": "Последние записи",
     "home.see_all_posts": "Весь блог",
     "home.projects": "Проекты",
@@ -56,6 +59,13 @@ export const ui = {
     "theme.system": "Системная тема",
   },
   en: {
+    "meta.home.title": "Home",
+    "meta.home.description":
+      "Eugene Shilnikov — product leader in payments and fintech, Dubai. Writing about product, AI agents and personal systems.",
+    "meta.blog.title": "Blog",
+    "meta.blog.description": "Notes on product, AI agents and personal systems",
+    "meta.projects.title": "Projects",
+    "meta.projects.description": "Personal projects with links to repositories and demos",
     "nav.blog": "blog",
     "nav.projects": "projects",
     "footer.copyright": "© 2026",
@@ -72,27 +82,23 @@ export const ui = {
     "projects.empty":
       "Nothing published yet — open-source code and case studies coming here.",
     "home.h1":
-      "Hi, I'm Eugene Shilnikov. I unpack — on my own cases — how AI is changing work and life.",
+      "Hi, I'm Eugene Shilnikov. I build products in payments and fintech — and use AI every day, at work and at home.",
     "home.intro1.part1":
-      "I build fintech for small business in the UAE and Russia. Started with my own startup — launched an online booking service for entrepreneurs and sold it to Yandex. Inside Yandex I grew business services in Maps, then led the product at ",
+      "Fifteen years in product, the last two in Dubai. I sold my first startup — an online booking service for small business — to Yandex. At ",
     "home.intro1.link1.label": "Yandex Pay",
     "home.intro1.link1.href": "https://pay.yandex.ru/",
-    "home.intro1.part2": " and launched in the UAE ",
+    "home.intro1.part2": " I launched a payment wallet and a digital banking app; in the UAE I built ",
     "home.intro1.link2.label": "Yango Maps",
     "home.intro1.link2.href": "https://maps.yango.com/en-ae/",
     "home.intro1.part3":
-      " — the international version of Yandex Maps. Now I lead products at ",
+      " — maps and navigation. Today I own the products of ",
     "home.intro1.link3.label": "Fortis",
     "home.intro1.link3.href": "https://www.wefortis.com/",
     "home.intro1.part4": " and ",
     "home.intro1.link4.label": "LifePay",
     "home.intro1.link4.href": "https://life-pay.ru/",
-    "home.intro1.part5": ".",
-    "home.intro2.part1":
-      "What I put into practice at work and in life — I describe on my ",
-    "home.intro2.link.label": "Telegram channel",
-    "home.intro2.link.href": "https://t.me/shilnikov_ai",
-    "home.intro2.part2": ". Here on the site — conclusions and ready-made solutions.",
+    "home.intro1.part5": ": payments and point of sale for small business.",
+    "home.intro2": "Here I write about that in practice: what AI takes off my plate at work and at home, what actually works and what doesn't.",
     "home.latest_posts": "Latest posts",
     "home.see_all_posts": "All posts",
     "home.projects": "Projects",

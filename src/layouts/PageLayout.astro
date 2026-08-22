@@ -8,16 +8,18 @@ import { getLangFromUrl } from "@i18n/utils";
 type Props = {
   title: string;
   description: string;
+  /** Картинка превью для соцсетей и мессенджеров; по умолчанию английская. */
+  image?: string;
 };
 
-const { title, description } = Astro.props;
+const { title, description, image } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
 <html lang={lang}>
   <head>
-    <Head title={`${title} | ${SITE.NAME}`} description={description} />
+    <Head title={`${title} | ${SITE.NAME}`} description={description} image={image} />
   </head>
   <body>
     <Header />
